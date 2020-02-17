@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{cpscpe.ViewCommunicationTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{cpscpe.ViewCommunicationLabel_id}"/>
+                    <h:outputText value="#{communicationController.selected.id}" title="#{cpscpe.ViewCommunicationTitle_id}"/>
+                    <h:outputText value="#{cpscpe.ViewCommunicationLabel_communication}"/>
+                    <h:outputText value="#{communicationController.selected.communication}" title="#{cpscpe.ViewCommunicationTitle_communication}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{communicationController.destroyAndView}" value="#{cpscpe.ViewCommunicationDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{cpscpe.ViewCommunicationEditLink}"/>
+                <br />
+                <h:commandLink action="#{communicationController.prepareCreate}" value="#{cpscpe.ViewCommunicationCreateLink}" />
+                <br />
+                <h:commandLink action="#{communicationController.prepareList}" value="#{cpscpe.ViewCommunicationShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{cpscpe.ViewCommunicationIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{cvestrings.ViewCveTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{cvestrings.ViewCveLabel_source}"/>
+                    <h:outputText value="#{cveController.selected.source}" title="#{cvestrings.ViewCveTitle_source}"/>
+                    <h:outputText value="#{cvestrings.ViewCveLabel_cveId}"/>
+                    <h:outputText value="#{cveController.selected.cveId}" title="#{cvestrings.ViewCveTitle_cveId}"/>
+                    <h:outputText value="#{cvestrings.ViewCveLabel_urls}"/>
+                    <h:outputText value="#{cveController.selected.urls}" title="#{cvestrings.ViewCveTitle_urls}"/>
+                    <h:outputText value="#{cvestrings.ViewCveLabel_date}"/>
+                    <h:outputText value="#{cveController.selected.date}" title="#{cvestrings.ViewCveTitle_date}"/>
+                    <h:outputText value="#{cvestrings.ViewCveLabel_id}"/>
+                    <h:outputText value="#{cveController.selected.id}" title="#{cvestrings.ViewCveTitle_id}"/>
+                    <h:outputText value="#{cvestrings.ViewCveLabel_description}"/>
+                    <h:outputText value="#{cveController.selected.description}" title="#{cvestrings.ViewCveTitle_description}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cveController.destroyAndView}" value="#{cvestrings.ViewCveDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{cvestrings.ViewCveEditLink}"/>
+                <br />
+                <h:commandLink action="#{cveController.prepareCreate}" value="#{cvestrings.ViewCveCreateLink}" />
+                <br />
+                <h:commandLink action="#{cveController.prepareList}" value="#{cvestrings.ViewCveShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{cvestrings.ViewCveIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

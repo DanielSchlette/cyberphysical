@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{cpestrings.ViewCpeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_cpe22String}"/>
+                    <h:outputText value="#{cpeController.selected.cpe22String}" title="#{cpestrings.ViewCpeTitle_cpe22String}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_cpe23String}"/>
+                    <h:outputText value="#{cpeController.selected.cpe23String}" title="#{cpestrings.ViewCpeTitle_cpe23String}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_id}"/>
+                    <h:outputText value="#{cpeController.selected.id}" title="#{cpestrings.ViewCpeTitle_id}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_vendor}"/>
+                    <h:outputText value="#{cpeController.selected.vendor}" title="#{cpestrings.ViewCpeTitle_vendor}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_product}"/>
+                    <h:outputText value="#{cpeController.selected.product}" title="#{cpestrings.ViewCpeTitle_product}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_version}"/>
+                    <h:outputText value="#{cpeController.selected.version}" title="#{cpestrings.ViewCpeTitle_version}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_targetHardware}"/>
+                    <h:outputText value="#{cpeController.selected.targetHardware}" title="#{cpestrings.ViewCpeTitle_targetHardware}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_other}"/>
+                    <h:outputText value="#{cpeController.selected.other}" title="#{cpestrings.ViewCpeTitle_other}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_update}"/>
+                    <h:outputText value="#{cpeController.selected.update}" title="#{cpestrings.ViewCpeTitle_update}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_edition}"/>
+                    <h:outputText value="#{cpeController.selected.edition}" title="#{cpestrings.ViewCpeTitle_edition}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_language}"/>
+                    <h:outputText value="#{cpeController.selected.language}" title="#{cpestrings.ViewCpeTitle_language}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_softwareEdition}"/>
+                    <h:outputText value="#{cpeController.selected.softwareEdition}" title="#{cpestrings.ViewCpeTitle_softwareEdition}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_targetSoftware}"/>
+                    <h:outputText value="#{cpeController.selected.targetSoftware}" title="#{cpestrings.ViewCpeTitle_targetSoftware}"/>
+                    <h:outputText value="#{cpestrings.ViewCpeLabel_title}"/>
+                    <h:outputText value="#{cpeController.selected.title}" title="#{cpestrings.ViewCpeTitle_title}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cpeController.destroyAndView}" value="#{cpestrings.ViewCpeDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{cpestrings.ViewCpeEditLink}"/>
+                <br />
+                <h:commandLink action="#{cpeController.prepareCreate}" value="#{cpestrings.ViewCpeCreateLink}" />
+                <br />
+                <h:commandLink action="#{cpeController.prepareList}" value="#{cpestrings.ViewCpeShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{cpestrings.ViewCpeIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

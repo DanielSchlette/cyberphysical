@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{cpscpe.CreateCyberPhysicalCpeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_part}" for="part" />
+                    <h:selectOneMenu id="part" value="#{cyberPhysicalCpeController.selected.part}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_part}" >
+                        <f:selectItems value="#{partController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_communication}" for="communication" />
+                    <h:selectOneMenu id="communication" value="#{cyberPhysicalCpeController.selected.communication}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_communication}" >
+                        <f:selectItems value="#{communicationController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{cyberPhysicalCpeController.selected.id}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_id}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_vendor}" for="vendor" />
+                    <h:inputText id="vendor" value="#{cyberPhysicalCpeController.selected.vendor}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_vendor}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_product}" for="product" />
+                    <h:inputText id="product" value="#{cyberPhysicalCpeController.selected.product}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_product}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_version}" for="version" />
+                    <h:inputText id="version" value="#{cyberPhysicalCpeController.selected.version}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_version}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_targetHardware}" for="targetHardware" />
+                    <h:inputText id="targetHardware" value="#{cyberPhysicalCpeController.selected.targetHardware}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_targetHardware}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_other}" for="other" />
+                    <h:inputText id="other" value="#{cyberPhysicalCpeController.selected.other}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_other}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_update}" for="update" />
+                    <h:inputText id="update" value="#{cyberPhysicalCpeController.selected.update}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_update}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_edition}" for="edition" />
+                    <h:inputText id="edition" value="#{cyberPhysicalCpeController.selected.edition}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_edition}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{cyberPhysicalCpeController.selected.language}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_language}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_softwareEdition}" for="softwareEdition" />
+                    <h:inputText id="softwareEdition" value="#{cyberPhysicalCpeController.selected.softwareEdition}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_softwareEdition}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_targetSoftware}" for="targetSoftware" />
+                    <h:inputText id="targetSoftware" value="#{cyberPhysicalCpeController.selected.targetSoftware}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_targetSoftware}" />
+                    <h:outputLabel value="#{cpscpe.CreateCyberPhysicalCpeLabel_title}" for="title" />
+                    <h:inputText id="title" value="#{cyberPhysicalCpeController.selected.title}" title="#{cpscpe.CreateCyberPhysicalCpeTitle_title}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{cyberPhysicalCpeController.create}" value="#{cpscpe.CreateCyberPhysicalCpeSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{cyberPhysicalCpeController.prepareList}" value="#{cpscpe.CreateCyberPhysicalCpeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{cpscpe.CreateCyberPhysicalCpeIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

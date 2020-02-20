@@ -4,12 +4,14 @@ C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\con
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\components\util\JsfUtil.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\beans\InitDatabaseController.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\components\CommunicationController.java
+C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\cpsbundle\CpeCveCache.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\beans\SqlInsertController.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\components\CveFacade.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\entities\Communication.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\components\IndustryController.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\enums\ProtocolPresettings.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\entities\Cpe.java
+C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\cpsbundle\BundleController.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\components\util\PaginationHelper.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\enums\PartPresettings.java
 C:\Users\tarnschaf\Documents\GitHub\cyberphysical\src\main\java\cps\extended\concept\components\CpeController.java

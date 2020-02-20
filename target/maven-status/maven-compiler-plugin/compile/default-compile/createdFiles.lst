@@ -10,8 +10,10 @@ cps\extended\concept\dao\DbManager.class
 cps\extended\concept\enums\CommunicationPresettings.class
 cps\extended\concept\components\IndustryController$IndustryControllerConverter.class
 cps\extended\concept\directory\DirectoryUtil.class
+cps\extended\concept\cpsbundle\CpeCveCache.class
 cps\extended\concept\components\ProtocolController.class
 cps\extended\concept\dao\CpeDAO.class
+cps\extended\concept\cpsbundle\BundleController.class
 cps\extended\concept\entities\Cve_.class
 cps\extended\concept\dao\GenericDAO.class
 cps\extended\concept\components\CapabilityFacade.class

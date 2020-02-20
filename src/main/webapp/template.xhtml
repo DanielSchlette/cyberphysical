@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
 
@@ -11,16 +13,23 @@
         <meta name="description" content=""></meta>
         <meta name="author" content=""></meta>
 
-        <title>Erweiterte CPS-Enumerationen</title>
+        <title>CPS-Enumerations</title>
         <!-- Bootstrap core CSS -->
         <!--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/color/48/000000/system-task.png"/>
+        
+        <style>
+            label{
+                margin-right: 10px;
+            }
+        </style>
+        
+        
     </h:head>
 
     <h:body>
-
+        <p:growl></p:growl>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
@@ -76,6 +85,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
                                 <h:link class="dropdown-item" outcome="/components/cpe/Create.xhtml">Create CPE</h:link>     
                                 <h:link class="dropdown-item" outcome="/components/cve/Create.xhtml">Create CVE</h:link>   
+                                <h:link class="dropdown-item" outcome="/components/createCpsBundle.xhtml">Create CPS Bundle</h:link>   
 
                             </div>
                         </li>

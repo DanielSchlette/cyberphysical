@@ -33,18 +33,11 @@
                             <h:link class="nav-link" outcome="/cpesearch.xhtml">Search CPE</h:link>
                         </li>
                         <li class="nav-item active">
-                            <h:link class="nav-link" outcome="/cpcpesearch.xhtml">Search CP-CPE</h:link>
-                        </li>
-                        <li class="nav-item active">
                             <h:link class="nav-link" outcome="/cvesearch.xhtml">Search CVE</h:link>
                         </li>
-                        <li class="nav-item active">
-                            <h:link class="nav-link" outcome="/cpscvesearch.xhtml">Search CPS-CVE</h:link>
-                        </li>
-
                         <li class="nav-item active dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
+                                Definitions
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
 
@@ -53,7 +46,13 @@
                                 <h:link class="dropdown-item" outcome="/components/industry/List.xhtml">Industries</h:link>
                                 <h:link class="dropdown-item" outcome="/components/protocol/List.xhtml">Protocols</h:link>
                                 <h:link class="dropdown-item" outcome="/components/communication/List.xhtml">Communications</h:link>
-                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Enumerations
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
                                 <h:link class="dropdown-item" outcome="/components/cpe/List.xhtml">CPE</h:link>     
                                 <h:link class="dropdown-item" outcome="/components/cyberPhysicalCpe/List.xhtml">CP-CPE</h:link>   
                                 <h:link class="dropdown-item" outcome="/components/cve/List.xhtml">CVE</h:link>   

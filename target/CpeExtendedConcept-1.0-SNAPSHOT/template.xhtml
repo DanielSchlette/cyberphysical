@@ -30,6 +30,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
+                            <h:link class="nav-link" outcome="/bundlesearch.xhtml">Search CPS Bundles</h:link>
+                        </li>
+                        <li class="nav-item active">
                             <h:link class="nav-link" outcome="/cpesearch.xhtml">Search CPE</h:link>
                         </li>
                         <li class="nav-item active">
@@ -38,9 +41,9 @@
                         <li class="nav-item active">
                             <h:link class="nav-link" outcome="/datagen.xhtml">Init Database</h:link>
                         </li>
-                        
-                        
-                        
+
+
+
                         <li class="nav-item active dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Definitions
@@ -65,6 +68,18 @@
 
                             </div>
                         </li>
+
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Create
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                                <h:link class="dropdown-item" outcome="/components/cpe/Create.xhtml">Create CPE</h:link>     
+                                <h:link class="dropdown-item" outcome="/components/cve/Create.xhtml">Create CVE</h:link>   
+
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>

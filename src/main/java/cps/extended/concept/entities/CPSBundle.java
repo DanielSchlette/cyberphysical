@@ -14,6 +14,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
@@ -33,7 +35,11 @@ public class CPSBundle implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "bundles")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "bundle_combinations", joinColumns = {
+        @JoinColumn(name = "bundle_id")}, inverseJoinColumns = {
+        @JoinColumn(name = "cpe_id")}
+    )
     private List<Cpe> cpes = new ArrayList<>();
 
     public int getId() {

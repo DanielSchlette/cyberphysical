@@ -58,4 +58,9 @@ public class Part implements Serializable {
         this.cpelist = cpelist;
     }
 
+    @Override
+    public String toString() {
+        return part;
+    }
+
 }

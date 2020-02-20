@@ -23,6 +23,8 @@ public class Capability implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @Column(name = "capability")
     private String capability;
 
@@ -32,6 +34,14 @@ public class Capability implements Serializable {
 
     public void setCapability(String capability) {
         this.capability = capability;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

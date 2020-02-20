@@ -7,6 +7,7 @@ package cps.extended.concept.entities;
 
 import cps.extended.concept.entities.Cve;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,7 +15,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * CPE datebase entry
@@ -63,8 +67,9 @@ public class Cpe {
     @Column(name = "other")
     protected String other;
 
-    @Column(name = "part")
-    private String part;
+    @ManyToOne
+    @JoinColumn(name = "part", referencedColumnName = "id")
+    private Part part;
 
     @Column(name = "cpe22")
     private String cpe22String;
@@ -75,14 +80,20 @@ public class Cpe {
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "cyberCpes")
     private List<Cve> cyberCves = new ArrayList<>();
 
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "cpes")
+    private List<CPSBundle> bundles = new ArrayList<>();
+
     public final static String CPE_ATTR = "cpe";
 
     public Cpe() {
     }
 
     public void set23Uri(String cpe23) {
-        this.cpe23String = cpe23;
-        cpe23 = cpe23.substring(8);
+        //mapCPE23(cpe23);
+    }
+
+    public void mapCPE23(HashMap<String, Part> parts) {
+        String cpe23 = cpe23String.substring(8);
         String[] tokens = cpe23.split(":");
 
         int tokenNumber = 0;
@@ -91,7 +102,7 @@ public class Cpe {
         for (String token : tokens) {
             switch (tokenNumber) {
                 case 0:
-                    part = token;
+                    part = parts.get(token);
                     break;
                 case 1:
                     vendor = token;
@@ -130,38 +141,38 @@ public class Cpe {
 
     public void set22Uri(String cpe22) {
         this.cpe22String = cpe22;
-        cpe22 = cpe22.substring(5);
-        String[] tokens = cpe22.split(":");
-
-        int tokenNumber = 0;
-
-        //<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>
-        for (String token : tokens) {
-            switch (tokenNumber) {
-                case 0:
-                    part = token;
-                    break;
-                case 1:
-                    vendor = token;
-                    break;
-                case 2:
-                    product = token;
-                    break;
-                case 3:
-                    version = token;
-                    break;
-                case 4:
-                    update = token;
-                    break;
-                case 5:
-                    edition = token;
-                    break;
-                case 6:
-                    language = token;
-                    break;
-            }
-            tokenNumber++;
-        }
+//        cpe22 = cpe22.substring(5);
+//        String[] tokens = cpe22.split(":");
+//
+//        int tokenNumber = 0;
+//
+//        //<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>
+//        for (String token : tokens) {
+//            switch (tokenNumber) {
+//                case 0:
+//                    part = token;
+//                    break;
+//                case 1:
+//                    vendor = token;
+//                    break;
+//                case 2:
+//                    product = token;
+//                    break;
+//                case 3:
+//                    version = token;
+//                    break;
+//                case 4:
+//                    update = token;
+//                    break;
+//                case 5:
+//                    edition = token;
+//                    break;
+//                case 6:
+//                    language = token;
+//                    break;
+//            }
+//            tokenNumber++;
+//        }
 
     }
 
@@ -285,12 +296,20 @@ public class Cpe {
         this.other = other;
     }
 
-    public String getPart() {
+    public Part getPart() {
         return part;
     }
 
-    public void setPart(String part) {
+    public void setPart(Part part) {
         this.part = part;
+    }
+
+    public List<CPSBundle> getBundles() {
+        return bundles;
+    }
+
+    public void setBundles(List<CPSBundle> bundles) {
+        this.bundles = bundles;
     }
 
 }

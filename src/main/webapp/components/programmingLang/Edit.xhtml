@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{attributes.EditProgrammingLangTitle}"></h:outputText>
+            <h:outputText value="#{bundle.EditProgrammingLangTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,18 +15,20 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{attributes.EditProgrammingLangLabel_language}" for="language" />
-                    <h:inputText id="language" value="#{programmingLangController.selected.language}" title="#{attributes.EditProgrammingLangTitle_language}" />
+                    <h:outputLabel value="#{bundle.EditProgrammingLangLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{programmingLangController.selected.language}" title="#{bundle.EditProgrammingLangTitle_language}" />
+                    <h:outputLabel value="#{bundle.EditProgrammingLangLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{programmingLangController.selected.id}" title="#{bundle.EditProgrammingLangTitle_id}" />
                 </h:panelGrid>
-                <h:commandLink action="#{programmingLangController.update}" value="#{attributes.EditProgrammingLangSaveLink}"/>
+                <h:commandLink action="#{programmingLangController.update}" value="#{bundle.EditProgrammingLangSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{attributes.EditProgrammingLangViewLink}"/>
+                <h:link outcome="View" value="#{bundle.EditProgrammingLangViewLink}"/>
                 <br />
-                <h:commandLink action="#{programmingLangController.prepareList}" value="#{attributes.EditProgrammingLangShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{programmingLangController.prepareList}" value="#{bundle.EditProgrammingLangShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{attributes.EditProgrammingLangIndexLink}" />
+                <h:link outcome="/index" value="#{bundle.EditProgrammingLangIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

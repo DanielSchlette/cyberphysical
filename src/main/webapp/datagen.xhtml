@@ -11,12 +11,22 @@
         <ui:define name="body">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="mt-5">Create Database defaults</h1>
+                    <h1 class="mt-5">Fill Presets</h1>
                     <br></br>
                     <h:form>
                         <h:commandButton class="btn btn-light" value="Create Database defaults" action='#{initDatabaseController.initCyberPhysicalCpeDatabase()}'></h:commandButton>
                     </h:form>
                 </div>
+
+                <div class="col-lg-12 text-center">
+                    <h1 class="mt-5">Parse Database entries</h1>
+                    <br></br>
+                    <h:form>
+                        <h:commandButton class="btn btn-light" value="Parse Database entries" action='#{initDatabaseController.parseDatabase()}'></h:commandButton>
+                    </h:form>
+                </div>
+
+
                 <br></br>
                 <br></br>
                 <div class="col-lg-12 text-center">

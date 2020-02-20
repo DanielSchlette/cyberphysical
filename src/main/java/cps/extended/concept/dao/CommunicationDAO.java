@@ -6,7 +6,10 @@
 package cps.extended.concept.dao;
 
 import cps.extended.concept.entities.Communication;
+import cps.extended.concept.entities.ProgrammingLang;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -15,4 +18,5 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class CommunicationDAO extends GenericDAO<Communication, String> implements Serializable {
+
 }

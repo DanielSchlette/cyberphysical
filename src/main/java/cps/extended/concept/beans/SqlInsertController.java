@@ -88,9 +88,9 @@ public class SqlInsertController implements Serializable {
 
                 stmt.addBatch("TRUNCATE TABLE cpe");
                 stmt.addBatch("TRUNCATE TABLE cve");
-                stmt.addBatch("TRUNCATE TABLE cps_vulnerability");
-                stmt.addBatch("TRUNCATE TABLE cve_cps_vulnerability_mapping");
-                
+//                stmt.addBatch("TRUNCATE TABLE cps_vulnerability");
+//                stmt.addBatch("TRUNCATE TABLE cve_cps_vulnerability_mapping");
+
                 // at least because many time is needed
                 stmt.addBatch("TRUNCATE TABLE cve_cpe");
 

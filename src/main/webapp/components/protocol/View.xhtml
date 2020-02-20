@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{attributes.ViewProtocolTitle}"></h:outputText>
+            <h:outputText value="#{bundle.ViewProtocolTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,21 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{attributes.ViewProtocolLabel_protocol}"/>
-                    <h:outputText value="#{protocolController.selected.protocol}" title="#{attributes.ViewProtocolTitle_protocol}"/>
+                    <h:outputText value="#{bundle.ViewProtocolLabel_protocol}"/>
+                    <h:outputText value="#{protocolController.selected.protocol}" title="#{bundle.ViewProtocolTitle_protocol}"/>
+                    <h:outputText value="#{bundle.ViewProtocolLabel_id}"/>
+                    <h:outputText value="#{protocolController.selected.id}" title="#{bundle.ViewProtocolTitle_id}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{protocolController.destroyAndView}" value="#{attributes.ViewProtocolDestroyLink}"/>
+                <h:commandLink action="#{protocolController.destroyAndView}" value="#{bundle.ViewProtocolDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{attributes.ViewProtocolEditLink}"/>
+                <h:link outcome="Edit" value="#{bundle.ViewProtocolEditLink}"/>
                 <br />
-                <h:commandLink action="#{protocolController.prepareCreate}" value="#{attributes.ViewProtocolCreateLink}" />
+                <h:commandLink action="#{protocolController.prepareCreate}" value="#{bundle.ViewProtocolCreateLink}" />
                 <br />
-                <h:commandLink action="#{protocolController.prepareList}" value="#{attributes.ViewProtocolShowAllLink}"/>
+                <h:commandLink action="#{protocolController.prepareList}" value="#{bundle.ViewProtocolShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{attributes.ViewProtocolIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.ViewProtocolIndexLink}"/>
 
             </h:form>
         </ui:define>

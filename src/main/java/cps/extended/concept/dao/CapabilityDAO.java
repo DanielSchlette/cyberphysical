@@ -6,7 +6,10 @@
 package cps.extended.concept.dao;
 
 import cps.extended.concept.entities.Capability;
+import cps.extended.concept.entities.Industry;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -15,4 +18,6 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class CapabilityDAO extends GenericDAO<Capability, Integer> implements Serializable {
+
+
 }

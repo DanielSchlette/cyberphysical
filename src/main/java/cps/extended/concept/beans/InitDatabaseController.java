@@ -8,8 +8,10 @@ package cps.extended.concept.beans;
 import cps.extended.concept.dao.DbManager;
 import cps.extended.concept.entities.Capability;
 import cps.extended.concept.entities.Communication;
+import cps.extended.concept.entities.Cpe;
 import cps.extended.concept.entities.Industry;
 import cps.extended.concept.entities.Part;
+import cps.extended.concept.entities.ProgrammingLang;
 import cps.extended.concept.entities.Protocol;
 import cps.extended.concept.enums.CapabilityPresettings;
 import cps.extended.concept.enums.CommunicationPresettings;
@@ -17,6 +19,8 @@ import cps.extended.concept.enums.IndustryPresettings;
 import cps.extended.concept.enums.PartPresettings;
 import cps.extended.concept.enums.ProtocolPresettings;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -34,6 +38,16 @@ public class InitDatabaseController implements Serializable {
     DbManager dbm;
 
     public InitDatabaseController() {
+    }
+
+    public void parseDatabase() {
+        HashMap<String, Part> parts = dbm.getPartDAO().findAllMap();
+        List<Cpe> allcpes = dbm.getCpeDAO().findAll();
+        for (Cpe cpe : allcpes) {
+            cpe.mapCPE23(parts);
+            dbm.getCpeDAO().persist(cpe);
+        }
+
     }
 
     public void initCyberPhysicalCpeDatabase() {

@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cvestrings.EditCveTitle}"></h:outputText>
+            <h:outputText value="#{bundle.EditCveTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,28 +15,28 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{cvestrings.EditCveLabel_source}" for="source" />
-                    <h:inputText id="source" value="#{cveController.selected.source}" title="#{cvestrings.EditCveTitle_source}" />
-                    <h:outputLabel value="#{cvestrings.EditCveLabel_cveId}" for="cveId" />
-                    <h:inputText id="cveId" value="#{cveController.selected.cveId}" title="#{cvestrings.EditCveTitle_cveId}" />
-                    <h:outputLabel value="#{cvestrings.EditCveLabel_urls}" for="urls" />
-                    <h:inputTextarea rows="4" cols="30" id="urls" value="#{cveController.selected.urls}" title="#{cvestrings.EditCveTitle_urls}" />
-                    <h:outputLabel value="#{cvestrings.EditCveLabel_date}" for="date" />
-                    <h:inputTextarea rows="4" cols="30" id="date" value="#{cveController.selected.date}" title="#{cvestrings.EditCveTitle_date}" />
-                    <h:outputLabel value="#{cvestrings.EditCveLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{cveController.selected.id}" title="#{cvestrings.EditCveTitle_id}" />
-                    <h:outputLabel value="#{cvestrings.EditCveLabel_description}" for="description" />
-                    <h:inputTextarea rows="4" cols="30" id="description" value="#{cveController.selected.description}" title="#{cvestrings.EditCveTitle_description}" />
+                    <h:outputLabel value="#{bundle.EditCveLabel_source}" for="source" />
+                    <h:inputText id="source" value="#{cveController.selected.source}" title="#{bundle.EditCveTitle_source}" />
+                    <h:outputLabel value="#{bundle.EditCveLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{cveController.selected.id}" title="#{bundle.EditCveTitle_id}" />
+                    <h:outputLabel value="#{bundle.EditCveLabel_cveId}" for="cveId" />
+                    <h:inputText id="cveId" value="#{cveController.selected.cveId}" title="#{bundle.EditCveTitle_cveId}" />
+                    <h:outputLabel value="#{bundle.EditCveLabel_description}" for="description" />
+                    <h:inputTextarea rows="4" cols="30" id="description" value="#{cveController.selected.description}" title="#{bundle.EditCveTitle_description}" />
+                    <h:outputLabel value="#{bundle.EditCveLabel_date}" for="date" />
+                    <h:inputTextarea rows="4" cols="30" id="date" value="#{cveController.selected.date}" title="#{bundle.EditCveTitle_date}" />
+                    <h:outputLabel value="#{bundle.EditCveLabel_urls}" for="urls" />
+                    <h:inputTextarea rows="4" cols="30" id="urls" value="#{cveController.selected.urls}" title="#{bundle.EditCveTitle_urls}" />
                 </h:panelGrid>
-                <h:commandLink action="#{cveController.update}" value="#{cvestrings.EditCveSaveLink}"/>
+                <h:commandLink action="#{cveController.update}" value="#{bundle.EditCveSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{cvestrings.EditCveViewLink}"/>
+                <h:link outcome="View" value="#{bundle.EditCveViewLink}"/>
                 <br />
-                <h:commandLink action="#{cveController.prepareList}" value="#{cvestrings.EditCveShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{cveController.prepareList}" value="#{bundle.EditCveShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cvestrings.EditCveIndexLink}" />
+                <h:link outcome="/index" value="#{bundle.EditCveIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

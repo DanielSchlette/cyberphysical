@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{attributes.CreateCapabilityTitle}"></h:outputText>
+            <h:outputText value="#{bundle.CreateCapabilityTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,17 +15,19 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{attributes.CreateCapabilityLabel_capability}" for="capability" />
-                    <h:inputText id="capability" value="#{capabilityController.selected.capability}" title="#{attributes.CreateCapabilityTitle_capability}" />
+                    <h:outputLabel value="#{bundle.CreateCapabilityLabel_capability}" for="capability" />
+                    <h:inputText id="capability" value="#{capabilityController.selected.capability}" title="#{bundle.CreateCapabilityTitle_capability}" />
+                    <h:outputLabel value="#{bundle.CreateCapabilityLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{capabilityController.selected.id}" title="#{bundle.CreateCapabilityTitle_id}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{capabilityController.create}" value="#{attributes.CreateCapabilitySaveLink}" />
+                <h:commandLink action="#{capabilityController.create}" value="#{bundle.CreateCapabilitySaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{capabilityController.prepareList}" value="#{attributes.CreateCapabilityShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{capabilityController.prepareList}" value="#{bundle.CreateCapabilityShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{attributes.CreateCapabilityIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateCapabilityIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

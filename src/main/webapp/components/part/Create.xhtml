@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{attributes.CreatePartTitle}"></h:outputText>
+            <h:outputText value="#{bundle.CreatePartTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,17 +15,19 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{attributes.CreatePartLabel_part}" for="part" />
-                    <h:inputText id="part" value="#{partController.selected.part}" title="#{attributes.CreatePartTitle_part}" />
+                    <h:outputLabel value="#{bundle.CreatePartLabel_part}" for="part" />
+                    <h:inputText id="part" value="#{partController.selected.part}" title="#{bundle.CreatePartTitle_part}" />
+                    <h:outputLabel value="#{bundle.CreatePartLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{partController.selected.id}" title="#{bundle.CreatePartTitle_id}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{partController.create}" value="#{attributes.CreatePartSaveLink}" />
+                <h:commandLink action="#{partController.create}" value="#{bundle.CreatePartSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{partController.prepareList}" value="#{attributes.CreatePartShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{partController.prepareList}" value="#{bundle.CreatePartShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{attributes.CreatePartIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreatePartIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

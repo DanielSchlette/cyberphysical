@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cpestrings.ViewCpeTitle}"></h:outputText>
+            <h:outputText value="#{bundle.ViewCpeTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,47 +15,49 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_cpe22String}"/>
-                    <h:outputText value="#{cpeController.selected.cpe22String}" title="#{cpestrings.ViewCpeTitle_cpe22String}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_cpe23String}"/>
-                    <h:outputText value="#{cpeController.selected.cpe23String}" title="#{cpestrings.ViewCpeTitle_cpe23String}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_id}"/>
-                    <h:outputText value="#{cpeController.selected.id}" title="#{cpestrings.ViewCpeTitle_id}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_vendor}"/>
-                    <h:outputText value="#{cpeController.selected.vendor}" title="#{cpestrings.ViewCpeTitle_vendor}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_product}"/>
-                    <h:outputText value="#{cpeController.selected.product}" title="#{cpestrings.ViewCpeTitle_product}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_version}"/>
-                    <h:outputText value="#{cpeController.selected.version}" title="#{cpestrings.ViewCpeTitle_version}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_targetHardware}"/>
-                    <h:outputText value="#{cpeController.selected.targetHardware}" title="#{cpestrings.ViewCpeTitle_targetHardware}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_other}"/>
-                    <h:outputText value="#{cpeController.selected.other}" title="#{cpestrings.ViewCpeTitle_other}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_update}"/>
-                    <h:outputText value="#{cpeController.selected.update}" title="#{cpestrings.ViewCpeTitle_update}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_edition}"/>
-                    <h:outputText value="#{cpeController.selected.edition}" title="#{cpestrings.ViewCpeTitle_edition}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_language}"/>
-                    <h:outputText value="#{cpeController.selected.language}" title="#{cpestrings.ViewCpeTitle_language}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_softwareEdition}"/>
-                    <h:outputText value="#{cpeController.selected.softwareEdition}" title="#{cpestrings.ViewCpeTitle_softwareEdition}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_targetSoftware}"/>
-                    <h:outputText value="#{cpeController.selected.targetSoftware}" title="#{cpestrings.ViewCpeTitle_targetSoftware}"/>
-                    <h:outputText value="#{cpestrings.ViewCpeLabel_title}"/>
-                    <h:outputText value="#{cpeController.selected.title}" title="#{cpestrings.ViewCpeTitle_title}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_cpe22String}"/>
+                    <h:outputText value="#{cpeController.selected.cpe22String}" title="#{bundle.ViewCpeTitle_cpe22String}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_cpe23String}"/>
+                    <h:outputText value="#{cpeController.selected.cpe23String}" title="#{bundle.ViewCpeTitle_cpe23String}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_id}"/>
+                    <h:outputText value="#{cpeController.selected.id}" title="#{bundle.ViewCpeTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_update}"/>
+                    <h:outputText value="#{cpeController.selected.update}" title="#{bundle.ViewCpeTitle_update}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_edition}"/>
+                    <h:outputText value="#{cpeController.selected.edition}" title="#{bundle.ViewCpeTitle_edition}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_language}"/>
+                    <h:outputText value="#{cpeController.selected.language}" title="#{bundle.ViewCpeTitle_language}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_softwareEdition}"/>
+                    <h:outputText value="#{cpeController.selected.softwareEdition}" title="#{bundle.ViewCpeTitle_softwareEdition}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_targetSoftware}"/>
+                    <h:outputText value="#{cpeController.selected.targetSoftware}" title="#{bundle.ViewCpeTitle_targetSoftware}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_title}"/>
+                    <h:outputText value="#{cpeController.selected.title}" title="#{bundle.ViewCpeTitle_title}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_vendor}"/>
+                    <h:outputText value="#{cpeController.selected.vendor}" title="#{bundle.ViewCpeTitle_vendor}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_product}"/>
+                    <h:outputText value="#{cpeController.selected.product}" title="#{bundle.ViewCpeTitle_product}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_version}"/>
+                    <h:outputText value="#{cpeController.selected.version}" title="#{bundle.ViewCpeTitle_version}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_targetHardware}"/>
+                    <h:outputText value="#{cpeController.selected.targetHardware}" title="#{bundle.ViewCpeTitle_targetHardware}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_other}"/>
+                    <h:outputText value="#{cpeController.selected.other}" title="#{bundle.ViewCpeTitle_other}"/>
+                    <h:outputText value="#{bundle.ViewCpeLabel_part}"/>
+                    <h:outputText value="#{cpeController.selected.part}" title="#{bundle.ViewCpeTitle_part}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{cpeController.destroyAndView}" value="#{cpestrings.ViewCpeDestroyLink}"/>
+                <h:commandLink action="#{cpeController.destroyAndView}" value="#{bundle.ViewCpeDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cpestrings.ViewCpeEditLink}"/>
+                <h:link outcome="Edit" value="#{bundle.ViewCpeEditLink}"/>
                 <br />
-                <h:commandLink action="#{cpeController.prepareCreate}" value="#{cpestrings.ViewCpeCreateLink}" />
+                <h:commandLink action="#{cpeController.prepareCreate}" value="#{bundle.ViewCpeCreateLink}" />
                 <br />
-                <h:commandLink action="#{cpeController.prepareList}" value="#{cpestrings.ViewCpeShowAllLink}"/>
+                <h:commandLink action="#{cpeController.prepareList}" value="#{bundle.ViewCpeShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cpestrings.ViewCpeIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.ViewCpeIndexLink}"/>
 
             </h:form>
         </ui:define>

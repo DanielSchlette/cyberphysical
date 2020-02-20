@@ -6,7 +6,10 @@
 package cps.extended.concept.dao;
 
 import cps.extended.concept.entities.ProgrammingLang;
+import cps.extended.concept.entities.Protocol;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -15,5 +18,6 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class ProgrammingLangDAO extends GenericDAO<ProgrammingLang, String> implements Serializable {
+
 
 }

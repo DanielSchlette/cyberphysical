@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{attributes.EditProtocolTitle}"></h:outputText>
+            <h:outputText value="#{bundle.EditProtocolTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,18 +15,20 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{attributes.EditProtocolLabel_protocol}" for="protocol" />
-                    <h:inputText id="protocol" value="#{protocolController.selected.protocol}" title="#{attributes.EditProtocolTitle_protocol}" />
+                    <h:outputLabel value="#{bundle.EditProtocolLabel_protocol}" for="protocol" />
+                    <h:inputText id="protocol" value="#{protocolController.selected.protocol}" title="#{bundle.EditProtocolTitle_protocol}" />
+                    <h:outputLabel value="#{bundle.EditProtocolLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{protocolController.selected.id}" title="#{bundle.EditProtocolTitle_id}" />
                 </h:panelGrid>
-                <h:commandLink action="#{protocolController.update}" value="#{attributes.EditProtocolSaveLink}"/>
+                <h:commandLink action="#{protocolController.update}" value="#{bundle.EditProtocolSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{attributes.EditProtocolViewLink}"/>
+                <h:link outcome="View" value="#{bundle.EditProtocolViewLink}"/>
                 <br />
-                <h:commandLink action="#{protocolController.prepareList}" value="#{attributes.EditProtocolShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{protocolController.prepareList}" value="#{bundle.EditProtocolShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{attributes.EditProtocolIndexLink}" />
+                <h:link outcome="/index" value="#{bundle.EditProtocolIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

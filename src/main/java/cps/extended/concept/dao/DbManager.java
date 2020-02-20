@@ -18,17 +18,14 @@ import javax.inject.Inject;
 public class DbManager implements Serializable {
 
     @Inject
-    EditionDAO editionDAO;
-
-    @Inject
-    OtherDAO otherDAO;
-
-    @Inject
     ProgrammingLangDAO programmingLangDAO;
+
+    @Inject
+    CPSBundleDAO cpsbundleDAO;
 
     /* CPEs */
     @Inject
-    CpeDAO cppeDAO;
+    CpeDAO cpeDAO;
 
     /* CVEs */
     @Inject
@@ -106,28 +103,20 @@ public class DbManager implements Serializable {
         this.programmingLangDAO = programmingLangDAO;
     }
 
-    public CpeDAO getCppeDAO() {
-        return cppeDAO;
+    public CpeDAO getCpeDAO() {
+        return cpeDAO;
     }
 
-    public void setCppeDAO(CpeDAO cppeDAO) {
-        this.cppeDAO = cppeDAO;
+    public void setCpeDAO(CpeDAO cpeDAO) {
+        this.cpeDAO = cpeDAO;
     }
 
-    public EditionDAO getEditionDAO() {
-        return editionDAO;
+    public CPSBundleDAO getCpsbundleDAO() {
+        return cpsbundleDAO;
     }
 
-    public void setEditionDAO(EditionDAO editionDAO) {
-        this.editionDAO = editionDAO;
-    }
-
-    public OtherDAO getOtherDAO() {
-        return otherDAO;
-    }
-
-    public void setOtherDAO(OtherDAO otherDAO) {
-        this.otherDAO = otherDAO;
+    public void setCpsbundleDAO(CPSBundleDAO cpsbundleDAO) {
+        this.cpsbundleDAO = cpsbundleDAO;
     }
 
 }

@@ -18,6 +18,8 @@ public class Industry implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @Column(name = "industry")
     private String industry;
 
@@ -27,6 +29,14 @@ public class Industry implements Serializable {
 
     public void setIndustry(String industry) {
         this.industry = industry;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

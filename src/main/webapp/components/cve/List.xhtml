@@ -7,73 +7,73 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cvestrings.ListCveTitle}"></h:outputText>
+            <h:outputText value="#{bundle.ListCveTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-        <h:form styleClass="jsfcrud_list_form">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:outputText escape="false" value="#{cvestrings.ListCveEmpty}" rendered="#{cveController.items.rowCount == 0}"/>
-            <h:panelGroup rendered="#{cveController.items.rowCount > 0}">
-                <h:outputText value="#{cveController.pagination.pageFirstItem + 1}..#{cveController.pagination.pageLastItem + 1}/#{cveController.pagination.itemsCount}"/>&nbsp;
-                <h:commandLink action="#{cveController.previous}" value="#{cvestrings.Previous} #{cveController.pagination.pageSize}" rendered="#{cveController.pagination.hasPreviousPage}"/>&nbsp;
-                <h:commandLink action="#{cveController.next}" value="#{cvestrings.Next} #{cveController.pagination.pageSize}" rendered="#{cveController.pagination.hasNextPage}"/>&nbsp;
-                <h:dataTable value="#{cveController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{cvestrings.ListCveTitle_source}"/>
-                        </f:facet>
-                        <h:outputText value="#{item.source}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{cvestrings.ListCveTitle_cveId}"/>
-                        </f:facet>
-                        <h:outputText value="#{item.cveId}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{cvestrings.ListCveTitle_urls}"/>
-                        </f:facet>
-                        <h:outputText value="#{item.urls}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{cvestrings.ListCveTitle_date}"/>
-                        </f:facet>
-                        <h:outputText value="#{item.date}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{cvestrings.ListCveTitle_id}"/>
-                        </f:facet>
-                        <h:outputText value="#{item.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{cvestrings.ListCveTitle_description}"/>
-                        </f:facet>
-                        <h:outputText value="#{item.description}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="&nbsp;"/>
-                        </f:facet>
-                        <h:commandLink action="#{cveController.prepareView}" value="#{cvestrings.ListCveViewLink}"/>
-                        <h:outputText value=" "/>
-                        <h:commandLink action="#{cveController.prepareEdit}" value="#{cvestrings.ListCveEditLink}"/>
-                        <h:outputText value=" "/>
-                        <h:commandLink action="#{cveController.destroy}" value="#{cvestrings.ListCveDestroyLink}"/>
-                    </h:column>
-                </h:dataTable>
-            </h:panelGroup>
-            <br />
-            <h:commandLink action="#{cveController.prepareCreate}" value="#{cvestrings.ListCveCreateLink}"/>
-            <br />
-            <br />
-            <h:link outcome="/index" value="#{cvestrings.ListCveIndexLink}"/>
-        </h:form>
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCveEmpty}" rendered="#{cveController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{cveController.items.rowCount > 0}">
+                    <h:outputText value="#{cveController.pagination.pageFirstItem + 1}..#{cveController.pagination.pageLastItem + 1}/#{cveController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{cveController.previous}" value="#{bundle.Previous} #{cveController.pagination.pageSize}" rendered="#{cveController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{cveController.next}" value="#{bundle.Next} #{cveController.pagination.pageSize}" rendered="#{cveController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{cveController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCveTitle_source}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.source}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCveTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCveTitle_cveId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cveId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCveTitle_description}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.description}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCveTitle_date}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.date}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCveTitle_urls}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.urls}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{cveController.prepareView}" value="#{bundle.ListCveViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{cveController.prepareEdit}" value="#{bundle.ListCveEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{cveController.destroy}" value="#{bundle.ListCveDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{cveController.prepareCreate}" value="#{bundle.ListCveCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCveIndexLink}"/>
+            </h:form>
         </ui:define>
     </ui:composition>
 

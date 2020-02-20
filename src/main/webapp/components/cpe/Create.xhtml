@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cpestrings.CreateCpeTitle}"></h:outputText>
+            <h:outputText value="#{bundle.CreateCpeTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,43 +15,47 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_cpe22String}" for="cpe22String" />
-                    <h:inputText id="cpe22String" value="#{cpeController.selected.cpe22String}" title="#{cpestrings.CreateCpeTitle_cpe22String}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_cpe23String}" for="cpe23String" />
-                    <h:inputText id="cpe23String" value="#{cpeController.selected.cpe23String}" title="#{cpestrings.CreateCpeTitle_cpe23String}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{cpeController.selected.id}" title="#{cpestrings.CreateCpeTitle_id}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_vendor}" for="vendor" />
-                    <h:inputText id="vendor" value="#{cpeController.selected.vendor}" title="#{cpestrings.CreateCpeTitle_vendor}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_product}" for="product" />
-                    <h:inputText id="product" value="#{cpeController.selected.product}" title="#{cpestrings.CreateCpeTitle_product}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_version}" for="version" />
-                    <h:inputText id="version" value="#{cpeController.selected.version}" title="#{cpestrings.CreateCpeTitle_version}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_targetHardware}" for="targetHardware" />
-                    <h:inputText id="targetHardware" value="#{cpeController.selected.targetHardware}" title="#{cpestrings.CreateCpeTitle_targetHardware}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_other}" for="other" />
-                    <h:inputText id="other" value="#{cpeController.selected.other}" title="#{cpestrings.CreateCpeTitle_other}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_update}" for="update" />
-                    <h:inputText id="update" value="#{cpeController.selected.update}" title="#{cpestrings.CreateCpeTitle_update}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_edition}" for="edition" />
-                    <h:inputText id="edition" value="#{cpeController.selected.edition}" title="#{cpestrings.CreateCpeTitle_edition}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_language}" for="language" />
-                    <h:inputText id="language" value="#{cpeController.selected.language}" title="#{cpestrings.CreateCpeTitle_language}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_softwareEdition}" for="softwareEdition" />
-                    <h:inputText id="softwareEdition" value="#{cpeController.selected.softwareEdition}" title="#{cpestrings.CreateCpeTitle_softwareEdition}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_targetSoftware}" for="targetSoftware" />
-                    <h:inputText id="targetSoftware" value="#{cpeController.selected.targetSoftware}" title="#{cpestrings.CreateCpeTitle_targetSoftware}" />
-                    <h:outputLabel value="#{cpestrings.CreateCpeLabel_title}" for="title" />
-                    <h:inputText id="title" value="#{cpeController.selected.title}" title="#{cpestrings.CreateCpeTitle_title}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_cpe22String}" for="cpe22String" />
+                    <h:inputText id="cpe22String" value="#{cpeController.selected.cpe22String}" title="#{bundle.CreateCpeTitle_cpe22String}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_cpe23String}" for="cpe23String" />
+                    <h:inputText id="cpe23String" value="#{cpeController.selected.cpe23String}" title="#{bundle.CreateCpeTitle_cpe23String}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{cpeController.selected.id}" title="#{bundle.CreateCpeTitle_id}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_update}" for="update" />
+                    <h:inputText id="update" value="#{cpeController.selected.update}" title="#{bundle.CreateCpeTitle_update}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_edition}" for="edition" />
+                    <h:inputText id="edition" value="#{cpeController.selected.edition}" title="#{bundle.CreateCpeTitle_edition}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{cpeController.selected.language}" title="#{bundle.CreateCpeTitle_language}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_softwareEdition}" for="softwareEdition" />
+                    <h:inputText id="softwareEdition" value="#{cpeController.selected.softwareEdition}" title="#{bundle.CreateCpeTitle_softwareEdition}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_targetSoftware}" for="targetSoftware" />
+                    <h:inputText id="targetSoftware" value="#{cpeController.selected.targetSoftware}" title="#{bundle.CreateCpeTitle_targetSoftware}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_title}" for="title" />
+                    <h:inputText id="title" value="#{cpeController.selected.title}" title="#{bundle.CreateCpeTitle_title}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_vendor}" for="vendor" />
+                    <h:inputText id="vendor" value="#{cpeController.selected.vendor}" title="#{bundle.CreateCpeTitle_vendor}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_product}" for="product" />
+                    <h:inputText id="product" value="#{cpeController.selected.product}" title="#{bundle.CreateCpeTitle_product}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_version}" for="version" />
+                    <h:inputText id="version" value="#{cpeController.selected.version}" title="#{bundle.CreateCpeTitle_version}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_targetHardware}" for="targetHardware" />
+                    <h:inputText id="targetHardware" value="#{cpeController.selected.targetHardware}" title="#{bundle.CreateCpeTitle_targetHardware}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_other}" for="other" />
+                    <h:inputText id="other" value="#{cpeController.selected.other}" title="#{bundle.CreateCpeTitle_other}" />
+                    <h:outputLabel value="#{bundle.CreateCpeLabel_part}" for="part" />
+                    <h:selectOneMenu id="part" value="#{cpeController.selected.part}" title="#{bundle.CreateCpeTitle_part}" >
+                        <f:selectItems value="#{partController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{cpeController.create}" value="#{cpestrings.CreateCpeSaveLink}" />
+                <h:commandLink action="#{cpeController.create}" value="#{bundle.CreateCpeSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{cpeController.prepareList}" value="#{cpestrings.CreateCpeShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{cpeController.prepareList}" value="#{bundle.CreateCpeShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cpestrings.CreateCpeIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateCpeIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

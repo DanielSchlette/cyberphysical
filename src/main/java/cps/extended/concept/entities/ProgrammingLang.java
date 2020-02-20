@@ -22,6 +22,8 @@ public class ProgrammingLang implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @Column(name = "language")
     private String language;
 
@@ -31,6 +33,14 @@ public class ProgrammingLang implements Serializable {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

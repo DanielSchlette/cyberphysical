@@ -23,6 +23,8 @@ public class Communication implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @Column(name = "communication")
     private String communication;
 
@@ -36,4 +38,13 @@ public class Communication implements Serializable {
     public void setCommunication(String communication) {
         this.communication = communication;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }

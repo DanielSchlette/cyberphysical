@@ -73,5 +73,13 @@
             <base-name>/attributes</base-name>
             <var>attributes</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>/attributestrings</base-name>
+            <var>attributestrings</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
     </application>
 </faces-config>

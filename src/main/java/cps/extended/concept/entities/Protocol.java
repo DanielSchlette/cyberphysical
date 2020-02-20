@@ -23,6 +23,8 @@ public class Protocol implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @Column(name = "protocol")
     private String protocol;
 
@@ -32,6 +34,14 @@ public class Protocol implements Serializable {
 
     public String getProtocol() {
         return protocol;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

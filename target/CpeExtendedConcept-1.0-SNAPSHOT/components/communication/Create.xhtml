@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{attributes.CreateCommunicationTitle}"></h:outputText>
+            <h:outputText value="#{bundle.CreateCommunicationTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,17 +15,19 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{attributes.CreateCommunicationLabel_communication}" for="communication" />
-                    <h:inputText id="communication" value="#{communicationController.selected.communication}" title="#{attributes.CreateCommunicationTitle_communication}" />
+                    <h:outputLabel value="#{bundle.CreateCommunicationLabel_communication}" for="communication" />
+                    <h:inputText id="communication" value="#{communicationController.selected.communication}" title="#{bundle.CreateCommunicationTitle_communication}" />
+                    <h:outputLabel value="#{bundle.CreateCommunicationLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{communicationController.selected.id}" title="#{bundle.CreateCommunicationTitle_id}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{communicationController.create}" value="#{attributes.CreateCommunicationSaveLink}" />
+                <h:commandLink action="#{communicationController.create}" value="#{bundle.CreateCommunicationSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{communicationController.prepareList}" value="#{attributes.CreateCommunicationShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{communicationController.prepareList}" value="#{bundle.CreateCommunicationShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{attributes.CreateCommunicationIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateCommunicationIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

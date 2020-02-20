@@ -17,14 +17,15 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+
 @Named("capabilityController")
 @SessionScoped
 public class CapabilityController implements Serializable {
 
+
     private Capability current;
     private DataModel items = null;
-    @EJB
-    private cps.extended.concept.components.CapabilityFacade ejbFacade;
+    @EJB private cps.extended.concept.components.CapabilityFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -42,7 +43,6 @@ public class CapabilityController implements Serializable {
     private CapabilityFacade getFacade() {
         return ejbFacade;
     }
-
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -54,7 +54,7 @@ public class CapabilityController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem()+getPageSize()}));
                 }
             };
         }
@@ -67,7 +67,7 @@ public class CapabilityController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Capability) getItems().getRowData();
+        current = (Capability)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
@@ -81,16 +81,16 @@ public class CapabilityController implements Serializable {
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("CapabilityCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("CapabilityCreated"));
             return prepareCreate();
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String prepareEdit() {
-        current = (Capability) getItems().getRowData();
+        current = (Capability)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -98,16 +98,16 @@ public class CapabilityController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("CapabilityUpdated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("CapabilityUpdated"));
             return "View";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String destroy() {
-        current = (Capability) getItems().getRowData();
+        current = (Capability)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreatePagination();
@@ -131,9 +131,9 @@ public class CapabilityController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("CapabilityDeleted"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("CapabilityDeleted"));
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
         }
     }
 
@@ -141,14 +141,14 @@ public class CapabilityController implements Serializable {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
             // selected index cannot be bigger than number of items:
-            selectedItemIndex = count - 1;
+            selectedItemIndex = count-1;
             // go to previous page if last page disappeared:
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
+            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex+1}).get(0);
         }
     }
 
@@ -191,7 +191,7 @@ public class CapabilityController implements Serializable {
         return ejbFacade.find(id);
     }
 
-    @FacesConverter(forClass = Capability.class)
+    @FacesConverter(forClass=Capability.class)
     public static class CapabilityControllerConverter implements Converter {
 
         @Override
@@ -199,7 +199,7 @@ public class CapabilityController implements Serializable {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            CapabilityController controller = (CapabilityController) facesContext.getApplication().getELResolver().
+            CapabilityController controller = (CapabilityController)facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "capabilityController");
             return controller.getCapability(getKey(value));
         }
@@ -225,7 +225,7 @@ public class CapabilityController implements Serializable {
                 Capability o = (Capability) object;
                 return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Capability.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: "+Capability.class.getName());
             }
         }
 

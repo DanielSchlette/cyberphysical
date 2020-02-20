@@ -69,6 +69,26 @@ public class Cpe {
     @JoinColumn(name = "part", referencedColumnName = "id")
     private Part part;
 
+    @ManyToOne
+    @JoinColumn(name = "capability", referencedColumnName = "id")
+    private Capability capability;
+
+    @ManyToOne
+    @JoinColumn(name = "communication", referencedColumnName = "id")
+    private Communication communication;
+
+    @ManyToOne
+    @JoinColumn(name = "industry", referencedColumnName = "id")
+    private Industry industry;
+
+    @ManyToOne
+    @JoinColumn(name = "programmingLang", referencedColumnName = "id")
+    private ProgrammingLang programmingLang;
+
+    @ManyToOne
+    @JoinColumn(name = "protocol", referencedColumnName = "id")
+    private Protocol protocol;
+
     @Column(name = "cpe22")
     private String cpe22String;
 
@@ -308,6 +328,46 @@ public class Cpe {
 
     public void setBundles(List<CPSBundle> bundles) {
         this.bundles = bundles;
+    }
+
+    public Capability getCapability() {
+        return capability;
+    }
+
+    public void setCapability(Capability capability) {
+        this.capability = capability;
+    }
+
+    public Communication getCommunication() {
+        return communication;
+    }
+
+    public void setCommunication(Communication communication) {
+        this.communication = communication;
+    }
+
+    public Industry getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(Industry industry) {
+        this.industry = industry;
+    }
+
+    public ProgrammingLang getProgrammingLang() {
+        return programmingLang;
+    }
+
+    public void setProgrammingLang(ProgrammingLang programmingLang) {
+        this.programmingLang = programmingLang;
+    }
+
+    public Protocol getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(Protocol protocol) {
+        this.protocol = protocol;
     }
 
 }

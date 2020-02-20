@@ -6,11 +6,13 @@
 package cps.extended.concept.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * The protocol in the cyber-physical network
@@ -24,6 +26,9 @@ public class Protocol implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @OneToMany(mappedBy = "protocol")
+    private List<Cpe> cpelist;
 
     @Column(name = "protocol")
     private String protocol;
@@ -42,6 +47,19 @@ public class Protocol implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Cpe> getCpelist() {
+        return cpelist;
+    }
+
+    public void setCpelist(List<Cpe> cpelist) {
+        this.cpelist = cpelist;
+    }
+
+    @Override
+    public String toString() {
+        return protocol;
     }
 
 }

@@ -17,14 +17,15 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+
 @Named("cpeController")
 @SessionScoped
 public class CpeController implements Serializable {
 
+
     private Cpe current;
     private DataModel items = null;
-    @EJB
-    private cps.extended.concept.components.CpeFacade ejbFacade;
+    @EJB private cps.extended.concept.components.CpeFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -42,7 +43,6 @@ public class CpeController implements Serializable {
     private CpeFacade getFacade() {
         return ejbFacade;
     }
-
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -54,7 +54,7 @@ public class CpeController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem()+getPageSize()}));
                 }
             };
         }
@@ -67,7 +67,7 @@ public class CpeController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Cpe) getItems().getRowData();
+        current = (Cpe)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
@@ -81,16 +81,16 @@ public class CpeController implements Serializable {
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("CpeCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("CpeCreated"));
             return prepareCreate();
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String prepareEdit() {
-        current = (Cpe) getItems().getRowData();
+        current = (Cpe)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -98,16 +98,16 @@ public class CpeController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("CpeUpdated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("CpeUpdated"));
             return "View";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String destroy() {
-        current = (Cpe) getItems().getRowData();
+        current = (Cpe)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreatePagination();
@@ -131,9 +131,9 @@ public class CpeController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("CpeDeleted"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("CpeDeleted"));
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
         }
     }
 
@@ -141,14 +141,14 @@ public class CpeController implements Serializable {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
             // selected index cannot be bigger than number of items:
-            selectedItemIndex = count - 1;
+            selectedItemIndex = count-1;
             // go to previous page if last page disappeared:
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
+            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex+1}).get(0);
         }
     }
 
@@ -191,7 +191,7 @@ public class CpeController implements Serializable {
         return ejbFacade.find(id);
     }
 
-    @FacesConverter(forClass = Cpe.class)
+    @FacesConverter(forClass=Cpe.class)
     public static class CpeControllerConverter implements Converter {
 
         @Override
@@ -199,7 +199,7 @@ public class CpeController implements Serializable {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            CpeController controller = (CpeController) facesContext.getApplication().getELResolver().
+            CpeController controller = (CpeController)facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "cpeController");
             return controller.getCpe(getKey(value));
         }
@@ -225,7 +225,7 @@ public class CpeController implements Serializable {
                 Cpe o = (Cpe) object;
                 return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Cpe.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: "+Cpe.class.getName());
             }
         }
 

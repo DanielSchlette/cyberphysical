@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewProgrammingLangTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.ViewProgrammingLangTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProgrammingLangLabel_language}"/>
-                    <h:outputText value="#{programmingLangController.selected.language}" title="#{bundle.ViewProgrammingLangTitle_language}"/>
-                    <h:outputText value="#{bundle.ViewProgrammingLangLabel_id}"/>
-                    <h:outputText value="#{programmingLangController.selected.id}" title="#{bundle.ViewProgrammingLangTitle_id}"/>
+                    <h:outputText value="#{cpestrings.ViewProgrammingLangLabel_language}"/>
+                    <h:outputText value="#{programmingLangController.selected.language}" title="#{cpestrings.ViewProgrammingLangTitle_language}"/>
+                    <h:outputText value="#{cpestrings.ViewProgrammingLangLabel_id}"/>
+                    <h:outputText value="#{programmingLangController.selected.id}" title="#{cpestrings.ViewProgrammingLangTitle_id}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{programmingLangController.destroyAndView}" value="#{bundle.ViewProgrammingLangDestroyLink}"/>
+                <h:commandLink action="#{programmingLangController.destroyAndView}" value="#{cpestrings.ViewProgrammingLangDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewProgrammingLangEditLink}"/>
+                <h:link outcome="Edit" value="#{cpestrings.ViewProgrammingLangEditLink}"/>
                 <br />
-                <h:commandLink action="#{programmingLangController.prepareCreate}" value="#{bundle.ViewProgrammingLangCreateLink}" />
+                <h:commandLink action="#{programmingLangController.prepareCreate}" value="#{cpestrings.ViewProgrammingLangCreateLink}" />
                 <br />
-                <h:commandLink action="#{programmingLangController.prepareList}" value="#{bundle.ViewProgrammingLangShowAllLink}"/>
+                <h:commandLink action="#{programmingLangController.prepareList}" value="#{cpestrings.ViewProgrammingLangShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewProgrammingLangIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.ViewProgrammingLangIndexLink}"/>
 
             </h:form>
         </ui:define>

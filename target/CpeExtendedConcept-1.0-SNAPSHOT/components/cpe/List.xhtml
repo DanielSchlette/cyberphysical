@@ -7,126 +7,156 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListCpeTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.ListCpeTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListCpeEmpty}" rendered="#{cpeController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{cpestrings.ListCpeEmpty}" rendered="#{cpeController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{cpeController.items.rowCount > 0}">
                     <h:outputText value="#{cpeController.pagination.pageFirstItem + 1}..#{cpeController.pagination.pageLastItem + 1}/#{cpeController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{cpeController.previous}" value="#{bundle.Previous} #{cpeController.pagination.pageSize}" rendered="#{cpeController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{cpeController.next}" value="#{bundle.Next} #{cpeController.pagination.pageSize}" rendered="#{cpeController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink action="#{cpeController.previous}" value="#{cpestrings.Previous} #{cpeController.pagination.pageSize}" rendered="#{cpeController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{cpeController.next}" value="#{cpestrings.Next} #{cpeController.pagination.pageSize}" rendered="#{cpeController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{cpeController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_cpe22String}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_cpe22String}"/>
                             </f:facet>
                             <h:outputText value="#{item.cpe22String}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_cpe23String}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_cpe23String}"/>
                             </f:facet>
                             <h:outputText value="#{item.cpe23String}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_id}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_update}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_update}"/>
                             </f:facet>
                             <h:outputText value="#{item.update}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_edition}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_edition}"/>
                             </f:facet>
                             <h:outputText value="#{item.edition}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_language}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_language}"/>
                             </f:facet>
                             <h:outputText value="#{item.language}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_softwareEdition}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_softwareEdition}"/>
                             </f:facet>
                             <h:outputText value="#{item.softwareEdition}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_targetSoftware}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_targetSoftware}"/>
                             </f:facet>
                             <h:outputText value="#{item.targetSoftware}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_title}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_title}"/>
                             </f:facet>
                             <h:outputText value="#{item.title}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_vendor}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_vendor}"/>
                             </f:facet>
                             <h:outputText value="#{item.vendor}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_product}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_product}"/>
                             </f:facet>
                             <h:outputText value="#{item.product}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_version}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_version}"/>
                             </f:facet>
                             <h:outputText value="#{item.version}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_targetHardware}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_targetHardware}"/>
                             </f:facet>
                             <h:outputText value="#{item.targetHardware}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_other}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_other}"/>
                             </f:facet>
                             <h:outputText value="#{item.other}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListCpeTitle_part}"/>
+                                <h:outputText value="#{cpestrings.ListCpeTitle_part}"/>
                             </f:facet>
                             <h:outputText value="#{item.part}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
+                                <h:outputText value="#{cpestrings.ListCpeTitle_capability}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.capability}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cpestrings.ListCpeTitle_communication}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.communication}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cpestrings.ListCpeTitle_industry}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.industry}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cpestrings.ListCpeTitle_programmingLang}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.programmingLang}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{cpestrings.ListCpeTitle_protocol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.protocol}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{cpeController.prepareView}" value="#{bundle.ListCpeViewLink}"/>
+                            <h:commandLink action="#{cpeController.prepareView}" value="#{cpestrings.ListCpeViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{cpeController.prepareEdit}" value="#{bundle.ListCpeEditLink}"/>
+                            <h:commandLink action="#{cpeController.prepareEdit}" value="#{cpestrings.ListCpeEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{cpeController.destroy}" value="#{bundle.ListCpeDestroyLink}"/>
+                            <h:commandLink action="#{cpeController.destroy}" value="#{cpestrings.ListCpeDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{cpeController.prepareCreate}" value="#{bundle.ListCpeCreateLink}"/>
+                <h:commandLink action="#{cpeController.prepareCreate}" value="#{cpestrings.ListCpeCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListCpeIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.ListCpeIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

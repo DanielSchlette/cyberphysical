@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewPartTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.ViewPartTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewPartLabel_part}"/>
-                    <h:outputText value="#{partController.selected.part}" title="#{bundle.ViewPartTitle_part}"/>
-                    <h:outputText value="#{bundle.ViewPartLabel_id}"/>
-                    <h:outputText value="#{partController.selected.id}" title="#{bundle.ViewPartTitle_id}"/>
+                    <h:outputText value="#{cpestrings.ViewPartLabel_part}"/>
+                    <h:outputText value="#{partController.selected.part}" title="#{cpestrings.ViewPartTitle_part}"/>
+                    <h:outputText value="#{cpestrings.ViewPartLabel_id}"/>
+                    <h:outputText value="#{partController.selected.id}" title="#{cpestrings.ViewPartTitle_id}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{partController.destroyAndView}" value="#{bundle.ViewPartDestroyLink}"/>
+                <h:commandLink action="#{partController.destroyAndView}" value="#{cpestrings.ViewPartDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewPartEditLink}"/>
+                <h:link outcome="Edit" value="#{cpestrings.ViewPartEditLink}"/>
                 <br />
-                <h:commandLink action="#{partController.prepareCreate}" value="#{bundle.ViewPartCreateLink}" />
+                <h:commandLink action="#{partController.prepareCreate}" value="#{cpestrings.ViewPartCreateLink}" />
                 <br />
-                <h:commandLink action="#{partController.prepareList}" value="#{bundle.ViewPartShowAllLink}"/>
+                <h:commandLink action="#{partController.prepareList}" value="#{cpestrings.ViewPartShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewPartIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.ViewPartIndexLink}"/>
 
             </h:form>
         </ui:define>

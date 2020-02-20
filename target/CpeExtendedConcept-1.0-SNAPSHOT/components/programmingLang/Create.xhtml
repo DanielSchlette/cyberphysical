@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateProgrammingLangTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.CreateProgrammingLangTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,19 +15,19 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProgrammingLangLabel_language}" for="language" />
-                    <h:inputText id="language" value="#{programmingLangController.selected.language}" title="#{bundle.CreateProgrammingLangTitle_language}" />
-                    <h:outputLabel value="#{bundle.CreateProgrammingLangLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{programmingLangController.selected.id}" title="#{bundle.CreateProgrammingLangTitle_id}" />
+                    <h:outputLabel value="#{cpestrings.CreateProgrammingLangLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{programmingLangController.selected.language}" title="#{cpestrings.CreateProgrammingLangTitle_language}" />
+                    <h:outputLabel value="#{cpestrings.CreateProgrammingLangLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{programmingLangController.selected.id}" title="#{cpestrings.CreateProgrammingLangTitle_id}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{programmingLangController.create}" value="#{bundle.CreateProgrammingLangSaveLink}" />
+                <h:commandLink action="#{programmingLangController.create}" value="#{cpestrings.CreateProgrammingLangSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{programmingLangController.prepareList}" value="#{bundle.CreateProgrammingLangShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{programmingLangController.prepareList}" value="#{cpestrings.CreateProgrammingLangShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProgrammingLangIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.CreateProgrammingLangIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

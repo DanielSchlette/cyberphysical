@@ -7,28 +7,28 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListIndustryTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.ListIndustryTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListIndustryEmpty}" rendered="#{industryController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{cpestrings.ListIndustryEmpty}" rendered="#{industryController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{industryController.items.rowCount > 0}">
                     <h:outputText value="#{industryController.pagination.pageFirstItem + 1}..#{industryController.pagination.pageLastItem + 1}/#{industryController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{industryController.previous}" value="#{bundle.Previous} #{industryController.pagination.pageSize}" rendered="#{industryController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{industryController.next}" value="#{bundle.Next} #{industryController.pagination.pageSize}" rendered="#{industryController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink action="#{industryController.previous}" value="#{cpestrings.Previous} #{industryController.pagination.pageSize}" rendered="#{industryController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{industryController.next}" value="#{cpestrings.Next} #{industryController.pagination.pageSize}" rendered="#{industryController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{industryController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListIndustryTitle_industry}"/>
+                                <h:outputText value="#{cpestrings.ListIndustryTitle_industry}"/>
                             </f:facet>
                             <h:outputText value="#{item.industry}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListIndustryTitle_id}"/>
+                                <h:outputText value="#{cpestrings.ListIndustryTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
@@ -36,19 +36,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{industryController.prepareView}" value="#{bundle.ListIndustryViewLink}"/>
+                            <h:commandLink action="#{industryController.prepareView}" value="#{cpestrings.ListIndustryViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{industryController.prepareEdit}" value="#{bundle.ListIndustryEditLink}"/>
+                            <h:commandLink action="#{industryController.prepareEdit}" value="#{cpestrings.ListIndustryEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{industryController.destroy}" value="#{bundle.ListIndustryDestroyLink}"/>
+                            <h:commandLink action="#{industryController.destroy}" value="#{cpestrings.ListIndustryDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{industryController.prepareCreate}" value="#{bundle.ListIndustryCreateLink}"/>
+                <h:commandLink action="#{industryController.prepareCreate}" value="#{cpestrings.ListIndustryCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListIndustryIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.ListIndustryIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

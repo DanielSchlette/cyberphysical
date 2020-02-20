@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditIndustryTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.EditIndustryTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,20 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditIndustryLabel_industry}" for="industry" />
-                    <h:inputText id="industry" value="#{industryController.selected.industry}" title="#{bundle.EditIndustryTitle_industry}" />
-                    <h:outputLabel value="#{bundle.EditIndustryLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{industryController.selected.id}" title="#{bundle.EditIndustryTitle_id}" />
+                    <h:outputLabel value="#{cpestrings.EditIndustryLabel_industry}" for="industry" />
+                    <h:inputText id="industry" value="#{industryController.selected.industry}" title="#{cpestrings.EditIndustryTitle_industry}" />
+                    <h:outputLabel value="#{cpestrings.EditIndustryLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{industryController.selected.id}" title="#{cpestrings.EditIndustryTitle_id}" />
                 </h:panelGrid>
-                <h:commandLink action="#{industryController.update}" value="#{bundle.EditIndustrySaveLink}"/>
+                <h:commandLink action="#{industryController.update}" value="#{cpestrings.EditIndustrySaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditIndustryViewLink}"/>
+                <h:link outcome="View" value="#{cpestrings.EditIndustryViewLink}"/>
                 <br />
-                <h:commandLink action="#{industryController.prepareList}" value="#{bundle.EditIndustryShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{industryController.prepareList}" value="#{cpestrings.EditIndustryShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditIndustryIndexLink}" />
+                <h:link outcome="/index" value="#{cpestrings.EditIndustryIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

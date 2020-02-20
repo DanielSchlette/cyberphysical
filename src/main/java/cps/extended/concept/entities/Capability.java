@@ -6,11 +6,13 @@
 package cps.extended.concept.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * The cyber-physical capability (sensoring, actuatoring etc.)
@@ -28,6 +30,9 @@ public class Capability implements Serializable {
     @Column(name = "capability")
     private String capability;
 
+    @OneToMany(mappedBy = "capability")
+    private List<Cpe> cpelist;
+
     public String getCapability() {
         return capability;
     }
@@ -42,6 +47,19 @@ public class Capability implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Cpe> getCpelist() {
+        return cpelist;
+    }
+
+    public void setCpelist(List<Cpe> cpelist) {
+        this.cpelist = cpelist;
+    }
+
+    @Override
+    public String toString() {
+        return capability;
     }
 
 }

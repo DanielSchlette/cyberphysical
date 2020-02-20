@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditPartTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.EditPartTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,20 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditPartLabel_part}" for="part" />
-                    <h:inputText id="part" value="#{partController.selected.part}" title="#{bundle.EditPartTitle_part}" />
-                    <h:outputLabel value="#{bundle.EditPartLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{partController.selected.id}" title="#{bundle.EditPartTitle_id}" />
+                    <h:outputLabel value="#{cpestrings.EditPartLabel_part}" for="part" />
+                    <h:inputText id="part" value="#{partController.selected.part}" title="#{cpestrings.EditPartTitle_part}" />
+                    <h:outputLabel value="#{cpestrings.EditPartLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{partController.selected.id}" title="#{cpestrings.EditPartTitle_id}" />
                 </h:panelGrid>
-                <h:commandLink action="#{partController.update}" value="#{bundle.EditPartSaveLink}"/>
+                <h:commandLink action="#{partController.update}" value="#{cpestrings.EditPartSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditPartViewLink}"/>
+                <h:link outcome="View" value="#{cpestrings.EditPartViewLink}"/>
                 <br />
-                <h:commandLink action="#{partController.prepareList}" value="#{bundle.EditPartShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{partController.prepareList}" value="#{cpestrings.EditPartShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditPartIndexLink}" />
+                <h:link outcome="/index" value="#{cpestrings.EditPartIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

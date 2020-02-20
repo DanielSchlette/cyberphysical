@@ -85,5 +85,9 @@
             <base-name>/cpsbundle</base-name>
             <var>cpsbundle</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>/cpestrings</base-name>
+            <var>cpestrings</var>
+        </resource-bundle>
     </application>
 </faces-config>

@@ -17,14 +17,15 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+
 @Named("protocolController")
 @SessionScoped
 public class ProtocolController implements Serializable {
 
+
     private Protocol current;
     private DataModel items = null;
-    @EJB
-    private cps.extended.concept.components.ProtocolFacade ejbFacade;
+    @EJB private cps.extended.concept.components.ProtocolFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -42,7 +43,6 @@ public class ProtocolController implements Serializable {
     private ProtocolFacade getFacade() {
         return ejbFacade;
     }
-
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -54,7 +54,7 @@ public class ProtocolController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem()+getPageSize()}));
                 }
             };
         }
@@ -67,7 +67,7 @@ public class ProtocolController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Protocol) getItems().getRowData();
+        current = (Protocol)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
@@ -81,16 +81,16 @@ public class ProtocolController implements Serializable {
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ProtocolCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("ProtocolCreated"));
             return prepareCreate();
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String prepareEdit() {
-        current = (Protocol) getItems().getRowData();
+        current = (Protocol)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -98,16 +98,16 @@ public class ProtocolController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ProtocolUpdated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("ProtocolUpdated"));
             return "View";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String destroy() {
-        current = (Protocol) getItems().getRowData();
+        current = (Protocol)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreatePagination();
@@ -131,9 +131,9 @@ public class ProtocolController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ProtocolDeleted"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("ProtocolDeleted"));
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
         }
     }
 
@@ -141,14 +141,14 @@ public class ProtocolController implements Serializable {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
             // selected index cannot be bigger than number of items:
-            selectedItemIndex = count - 1;
+            selectedItemIndex = count-1;
             // go to previous page if last page disappeared:
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
+            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex+1}).get(0);
         }
     }
 
@@ -191,7 +191,7 @@ public class ProtocolController implements Serializable {
         return ejbFacade.find(id);
     }
 
-    @FacesConverter(forClass = Protocol.class)
+    @FacesConverter(forClass=Protocol.class)
     public static class ProtocolControllerConverter implements Converter {
 
         @Override
@@ -199,7 +199,7 @@ public class ProtocolController implements Serializable {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            ProtocolController controller = (ProtocolController) facesContext.getApplication().getELResolver().
+            ProtocolController controller = (ProtocolController)facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "protocolController");
             return controller.getProtocol(getKey(value));
         }
@@ -225,7 +225,7 @@ public class ProtocolController implements Serializable {
                 Protocol o = (Protocol) object;
                 return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Protocol.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: "+Protocol.class.getName());
             }
         }
 

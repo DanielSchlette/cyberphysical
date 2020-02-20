@@ -6,11 +6,13 @@
 package cps.extended.concept.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * The protocol in the cyber-physical network
@@ -27,6 +29,9 @@ public class ProgrammingLang implements Serializable {
     @Column(name = "language")
     private String language;
 
+    @OneToMany(mappedBy = "programmingLang")
+    private List<Cpe> cpelist;
+
     public String getLanguage() {
         return language;
     }
@@ -41,6 +46,19 @@ public class ProgrammingLang implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Cpe> getCpelist() {
+        return cpelist;
+    }
+
+    public void setCpelist(List<Cpe> cpelist) {
+        this.cpelist = cpelist;
+    }
+
+    @Override
+    public String toString() {
+        return language;
     }
 
 }

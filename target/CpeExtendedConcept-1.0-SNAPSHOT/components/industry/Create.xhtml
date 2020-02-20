@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateIndustryTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.CreateIndustryTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,19 +15,19 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateIndustryLabel_industry}" for="industry" />
-                    <h:inputText id="industry" value="#{industryController.selected.industry}" title="#{bundle.CreateIndustryTitle_industry}" />
-                    <h:outputLabel value="#{bundle.CreateIndustryLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{industryController.selected.id}" title="#{bundle.CreateIndustryTitle_id}" />
+                    <h:outputLabel value="#{cpestrings.CreateIndustryLabel_industry}" for="industry" />
+                    <h:inputText id="industry" value="#{industryController.selected.industry}" title="#{cpestrings.CreateIndustryTitle_industry}" />
+                    <h:outputLabel value="#{cpestrings.CreateIndustryLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{industryController.selected.id}" title="#{cpestrings.CreateIndustryTitle_id}" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{industryController.create}" value="#{bundle.CreateIndustrySaveLink}" />
+                <h:commandLink action="#{industryController.create}" value="#{cpestrings.CreateIndustrySaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{industryController.prepareList}" value="#{bundle.CreateIndustryShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{industryController.prepareList}" value="#{cpestrings.CreateIndustryShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateIndustryIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.CreateIndustryIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

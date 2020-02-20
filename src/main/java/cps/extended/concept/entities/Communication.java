@@ -6,11 +6,13 @@
 package cps.extended.concept.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * The communication of the cyber-physical elements
@@ -27,6 +29,9 @@ public class Communication implements Serializable {
 
     @Column(name = "communication")
     private String communication;
+
+    @OneToMany(mappedBy = "communication")
+    private List<Cpe> cpelist;
 
     public Communication() {
     }
@@ -45,6 +50,19 @@ public class Communication implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Cpe> getCpelist() {
+        return cpelist;
+    }
+
+    public void setCpelist(List<Cpe> cpelist) {
+        this.cpelist = cpelist;
+    }
+
+    @Override
+    public String toString() {
+        return communication;
     }
 
 }

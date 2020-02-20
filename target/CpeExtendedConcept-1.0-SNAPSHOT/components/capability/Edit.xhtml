@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditCapabilityTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.EditCapabilityTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,20 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditCapabilityLabel_capability}" for="capability" />
-                    <h:inputText id="capability" value="#{capabilityController.selected.capability}" title="#{bundle.EditCapabilityTitle_capability}" />
-                    <h:outputLabel value="#{bundle.EditCapabilityLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{capabilityController.selected.id}" title="#{bundle.EditCapabilityTitle_id}" />
+                    <h:outputLabel value="#{cpestrings.EditCapabilityLabel_capability}" for="capability" />
+                    <h:inputText id="capability" value="#{capabilityController.selected.capability}" title="#{cpestrings.EditCapabilityTitle_capability}" />
+                    <h:outputLabel value="#{cpestrings.EditCapabilityLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{capabilityController.selected.id}" title="#{cpestrings.EditCapabilityTitle_id}" />
                 </h:panelGrid>
-                <h:commandLink action="#{capabilityController.update}" value="#{bundle.EditCapabilitySaveLink}"/>
+                <h:commandLink action="#{capabilityController.update}" value="#{cpestrings.EditCapabilitySaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditCapabilityViewLink}"/>
+                <h:link outcome="View" value="#{cpestrings.EditCapabilityViewLink}"/>
                 <br />
-                <h:commandLink action="#{capabilityController.prepareList}" value="#{bundle.EditCapabilityShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{capabilityController.prepareList}" value="#{cpestrings.EditCapabilityShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditCapabilityIndexLink}" />
+                <h:link outcome="/index" value="#{cpestrings.EditCapabilityIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

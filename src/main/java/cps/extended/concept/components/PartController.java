@@ -17,14 +17,15 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+
 @Named("partController")
 @SessionScoped
 public class PartController implements Serializable {
 
+
     private Part current;
     private DataModel items = null;
-    @EJB
-    private cps.extended.concept.components.PartFacade ejbFacade;
+    @EJB private cps.extended.concept.components.PartFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
@@ -42,7 +43,6 @@ public class PartController implements Serializable {
     private PartFacade getFacade() {
         return ejbFacade;
     }
-
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -54,7 +54,7 @@ public class PartController implements Serializable {
 
                 @Override
                 public DataModel createPageDataModel() {
-                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem() + getPageSize()}));
+                    return new ListDataModel(getFacade().findRange(new int[]{getPageFirstItem(), getPageFirstItem()+getPageSize()}));
                 }
             };
         }
@@ -67,7 +67,7 @@ public class PartController implements Serializable {
     }
 
     public String prepareView() {
-        current = (Part) getItems().getRowData();
+        current = (Part)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "View";
     }
@@ -81,16 +81,16 @@ public class PartController implements Serializable {
     public String create() {
         try {
             getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("PartCreated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("PartCreated"));
             return prepareCreate();
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String prepareEdit() {
-        current = (Part) getItems().getRowData();
+        current = (Part)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         return "Edit";
     }
@@ -98,16 +98,16 @@ public class PartController implements Serializable {
     public String update() {
         try {
             getFacade().edit(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("PartUpdated"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("PartUpdated"));
             return "View";
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
             return null;
         }
     }
 
     public String destroy() {
-        current = (Part) getItems().getRowData();
+        current = (Part)getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
         performDestroy();
         recreatePagination();
@@ -131,9 +131,9 @@ public class PartController implements Serializable {
     private void performDestroy() {
         try {
             getFacade().remove(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("PartDeleted"));
+            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cpestrings").getString("PartDeleted"));
         } catch (Exception e) {
-            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
+            JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cpestrings").getString("PersistenceErrorOccured"));
         }
     }
 
@@ -141,14 +141,14 @@ public class PartController implements Serializable {
         int count = getFacade().count();
         if (selectedItemIndex >= count) {
             // selected index cannot be bigger than number of items:
-            selectedItemIndex = count - 1;
+            selectedItemIndex = count-1;
             // go to previous page if last page disappeared:
             if (pagination.getPageFirstItem() >= count) {
                 pagination.previousPage();
             }
         }
         if (selectedItemIndex >= 0) {
-            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex + 1}).get(0);
+            current = getFacade().findRange(new int[]{selectedItemIndex, selectedItemIndex+1}).get(0);
         }
     }
 
@@ -191,7 +191,7 @@ public class PartController implements Serializable {
         return ejbFacade.find(id);
     }
 
-    @FacesConverter(forClass = Part.class)
+    @FacesConverter(forClass=Part.class)
     public static class PartControllerConverter implements Converter {
 
         @Override
@@ -199,7 +199,7 @@ public class PartController implements Serializable {
             if (value == null || value.length() == 0) {
                 return null;
             }
-            PartController controller = (PartController) facesContext.getApplication().getELResolver().
+            PartController controller = (PartController)facesContext.getApplication().getELResolver().
                     getValue(facesContext.getELContext(), null, "partController");
             return controller.getPart(getKey(value));
         }
@@ -225,7 +225,7 @@ public class PartController implements Serializable {
                 Part o = (Part) object;
                 return getStringKey(o.getId());
             } else {
-                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Part.class.getName());
+                throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: "+Part.class.getName());
             }
         }
 

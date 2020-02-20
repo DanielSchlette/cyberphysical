@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewCommunicationTitle}"></h:outputText>
+            <h:outputText value="#{cpestrings.ViewCommunicationTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewCommunicationLabel_communication}"/>
-                    <h:outputText value="#{communicationController.selected.communication}" title="#{bundle.ViewCommunicationTitle_communication}"/>
-                    <h:outputText value="#{bundle.ViewCommunicationLabel_id}"/>
-                    <h:outputText value="#{communicationController.selected.id}" title="#{bundle.ViewCommunicationTitle_id}"/>
+                    <h:outputText value="#{cpestrings.ViewCommunicationLabel_communication}"/>
+                    <h:outputText value="#{communicationController.selected.communication}" title="#{cpestrings.ViewCommunicationTitle_communication}"/>
+                    <h:outputText value="#{cpestrings.ViewCommunicationLabel_id}"/>
+                    <h:outputText value="#{communicationController.selected.id}" title="#{cpestrings.ViewCommunicationTitle_id}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{communicationController.destroyAndView}" value="#{bundle.ViewCommunicationDestroyLink}"/>
+                <h:commandLink action="#{communicationController.destroyAndView}" value="#{cpestrings.ViewCommunicationDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewCommunicationEditLink}"/>
+                <h:link outcome="Edit" value="#{cpestrings.ViewCommunicationEditLink}"/>
                 <br />
-                <h:commandLink action="#{communicationController.prepareCreate}" value="#{bundle.ViewCommunicationCreateLink}" />
+                <h:commandLink action="#{communicationController.prepareCreate}" value="#{cpestrings.ViewCommunicationCreateLink}" />
                 <br />
-                <h:commandLink action="#{communicationController.prepareList}" value="#{bundle.ViewCommunicationShowAllLink}"/>
+                <h:commandLink action="#{communicationController.prepareList}" value="#{cpestrings.ViewCommunicationShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewCommunicationIndexLink}"/>
+                <h:link outcome="/index" value="#{cpestrings.ViewCommunicationIndexLink}"/>
 
             </h:form>
         </ui:define>

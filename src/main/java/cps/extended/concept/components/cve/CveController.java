@@ -1,6 +1,6 @@
 package cps.extended.concept.components.cve;
 
-import cps.extended.concept.entities.vulnerability.Cve;
+import cps.extended.concept.entities.Cve;
 import cps.extended.concept.components.cve.util.JsfUtil;
 import cps.extended.concept.components.cve.util.PaginationHelper;
 

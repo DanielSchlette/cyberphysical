@@ -6,7 +6,7 @@
 package cps.extended.concept.cpe.sql;
 
 import cps.extended.concept.dao.DbManager;
-import cps.extended.concept.entities.asset.Cpe;
+import cps.extended.concept.entities.Cpe;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;

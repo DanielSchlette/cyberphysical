@@ -1,6 +1,6 @@
 package cps.extended.concept.components.cpe;
 
-import cps.extended.concept.entities.asset.Cpe;
+import cps.extended.concept.entities.Cpe;
 import cps.extended.concept.components.cpe.util.JsfUtil;
 import cps.extended.concept.components.cpe.util.PaginationHelper;
 

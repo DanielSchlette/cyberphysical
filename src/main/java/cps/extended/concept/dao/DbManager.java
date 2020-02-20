@@ -6,14 +6,11 @@
 package cps.extended.concept.dao;
 
 import cps.extended.concept.dao.asset.CpeDAO;
-import cps.extended.concept.dao.asset.CyberPhysicalCpeDAO;
 import cps.extended.concept.dao.asset.attributes.CommunicationDAO;
 import cps.extended.concept.dao.asset.attributes.IndustryDAO;
 import cps.extended.concept.dao.asset.attributes.PartDAO;
 import cps.extended.concept.dao.asset.attributes.CapabilityDAO;
 import cps.extended.concept.dao.asset.attributes.ProtocolDAO;
-import cps.extended.concept.dao.vulnerability.CpsVulnerabilityDAO;
-import cps.extended.concept.dao.vulnerability.CveCpsVulnerabilityMappingDAO;
 import cps.extended.concept.dao.vulnerability.CveDAO;
 import java.io.Serializable;
 import javax.ejb.Stateless;
@@ -30,14 +27,6 @@ public class DbManager implements Serializable {
     /* CPEs */
     @Inject
     CpeDAO cyberCpeDAO;
-
-    /* CP-CPEs */
-    @Inject
-    CyberPhysicalCpeDAO cyberPhyiscalCpeDAO;
-
-    /* CPS-CVEs */
-    @Inject
-    CpsVulnerabilityDAO commonVulnerabilityDAO;
 
     /* CVEs */
     @Inject
@@ -58,26 +47,6 @@ public class DbManager implements Serializable {
 
     @Inject
     ProtocolDAO protocolDAO;
-
-    /* Mapping between CPS-CVE and CVE */
-    @Inject
-    CveCpsVulnerabilityMappingDAO cveCpsVulnerabilityMappingDAO;
-
-    public CyberPhysicalCpeDAO getCyberPhyiscalCpeDAO() {
-        return cyberPhyiscalCpeDAO;
-    }
-
-    public CpsVulnerabilityDAO getCpsVulnerabilityDAO() {
-        return commonVulnerabilityDAO;
-    }
-
-    public void setCommonVulnerabilityDAO(CpsVulnerabilityDAO commonVulnerabilityDAO) {
-        this.commonVulnerabilityDAO = commonVulnerabilityDAO;
-    }
-
-    public void setCyberPhyiscalCpeDAO(CyberPhysicalCpeDAO cyberPhyiscalCpeDAO) {
-        this.cyberPhyiscalCpeDAO = cyberPhyiscalCpeDAO;
-    }
 
     public CpeDAO getCyberCpeDAO() {
         return cyberCpeDAO;
@@ -135,11 +104,4 @@ public class DbManager implements Serializable {
         this.protocolDAO = protocolDAO;
     }
 
-    public CveCpsVulnerabilityMappingDAO getCveCpsVulnerabilityMappingDAO() {
-        return cveCpsVulnerabilityMappingDAO;
-    }
-
-    public void setCveCpsVulnerabilityMappingDAO(CveCpsVulnerabilityMappingDAO cveCpsVulnerabilityMappingDAO) {
-        this.cveCpsVulnerabilityMappingDAO = cveCpsVulnerabilityMappingDAO;
-    }
 }

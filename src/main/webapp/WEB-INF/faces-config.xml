@@ -95,5 +95,13 @@
             <base-name>/vulnstrings</base-name>
             <var>vulnstrings</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>/stringspart</base-name>
+            <var>stringspart</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/stringscommunication</base-name>
+            <var>stringscommunication</var>
+        </resource-bundle>
     </application>
 </faces-config>

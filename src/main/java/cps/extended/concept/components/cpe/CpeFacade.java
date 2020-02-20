@@ -5,7 +5,7 @@
  */
 package cps.extended.concept.components.cpe;
 
-import cps.extended.concept.entities.asset.Cpe;
+import cps.extended.concept.entities.Cpe;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

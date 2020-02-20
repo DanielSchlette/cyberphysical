@@ -6,7 +6,7 @@
 package cps.extended.concept.cpe.sql;
 
 import cps.extended.concept.dao.DbManager;
-import cps.extended.concept.entities.vulnerability.Cve;
+import cps.extended.concept.entities.Cve;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

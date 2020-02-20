@@ -5,7 +5,7 @@
  */
 package cps.extended.concept.components.cve;
 
-import cps.extended.concept.entities.vulnerability.Cve;
+import cps.extended.concept.entities.Cve;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

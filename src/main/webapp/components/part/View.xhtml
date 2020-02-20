@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cpscpe.ViewPartTitle}"></h:outputText>
+            <h:outputText value="#{stringspart.ViewPartTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{cpscpe.ViewPartLabel_id}"/>
-                    <h:outputText value="#{partController.selected.id}" title="#{cpscpe.ViewPartTitle_id}"/>
-                    <h:outputText value="#{cpscpe.ViewPartLabel_part}"/>
-                    <h:outputText value="#{partController.selected.part}" title="#{cpscpe.ViewPartTitle_part}"/>
+                    <h:outputText value="#{stringspart.ViewPartLabel_id}"/>
+                    <h:outputText value="#{partController.selected.id}" title="#{stringspart.ViewPartTitle_id}"/>
+                    <h:outputText value="#{stringspart.ViewPartLabel_part}"/>
+                    <h:outputText value="#{partController.selected.part}" title="#{stringspart.ViewPartTitle_part}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{partController.destroyAndView}" value="#{cpscpe.ViewPartDestroyLink}"/>
+                <h:commandLink action="#{partController.destroyAndView}" value="#{stringspart.ViewPartDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cpscpe.ViewPartEditLink}"/>
+                <h:link outcome="Edit" value="#{stringspart.ViewPartEditLink}"/>
                 <br />
-                <h:commandLink action="#{partController.prepareCreate}" value="#{cpscpe.ViewPartCreateLink}" />
+                <h:commandLink action="#{partController.prepareCreate}" value="#{stringspart.ViewPartCreateLink}" />
                 <br />
-                <h:commandLink action="#{partController.prepareList}" value="#{cpscpe.ViewPartShowAllLink}"/>
+                <h:commandLink action="#{partController.prepareList}" value="#{stringspart.ViewPartShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cpscpe.ViewPartIndexLink}"/>
+                <h:link outcome="/index" value="#{stringspart.ViewPartIndexLink}"/>
 
             </h:form>
         </ui:define>

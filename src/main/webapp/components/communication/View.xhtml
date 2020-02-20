@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cpscpe.ViewCommunicationTitle}"></h:outputText>
+            <h:outputText value="#{stringscommunication.ViewCommunicationTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,23 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{cpscpe.ViewCommunicationLabel_id}"/>
-                    <h:outputText value="#{communicationController.selected.id}" title="#{cpscpe.ViewCommunicationTitle_id}"/>
-                    <h:outputText value="#{cpscpe.ViewCommunicationLabel_communication}"/>
-                    <h:outputText value="#{communicationController.selected.communication}" title="#{cpscpe.ViewCommunicationTitle_communication}"/>
+                    <h:outputText value="#{stringscommunication.ViewCommunicationLabel_id}"/>
+                    <h:outputText value="#{communicationController.selected.id}" title="#{stringscommunication.ViewCommunicationTitle_id}"/>
+                    <h:outputText value="#{stringscommunication.ViewCommunicationLabel_communication}"/>
+                    <h:outputText value="#{communicationController.selected.communication}" title="#{stringscommunication.ViewCommunicationTitle_communication}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{communicationController.destroyAndView}" value="#{cpscpe.ViewCommunicationDestroyLink}"/>
+                <h:commandLink action="#{communicationController.destroyAndView}" value="#{stringscommunication.ViewCommunicationDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{cpscpe.ViewCommunicationEditLink}"/>
+                <h:link outcome="Edit" value="#{stringscommunication.ViewCommunicationEditLink}"/>
                 <br />
-                <h:commandLink action="#{communicationController.prepareCreate}" value="#{cpscpe.ViewCommunicationCreateLink}" />
+                <h:commandLink action="#{communicationController.prepareCreate}" value="#{stringscommunication.ViewCommunicationCreateLink}" />
                 <br />
-                <h:commandLink action="#{communicationController.prepareList}" value="#{cpscpe.ViewCommunicationShowAllLink}"/>
+                <h:commandLink action="#{communicationController.prepareList}" value="#{stringscommunication.ViewCommunicationShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cpscpe.ViewCommunicationIndexLink}"/>
+                <h:link outcome="/index" value="#{stringscommunication.ViewCommunicationIndexLink}"/>
 
             </h:form>
         </ui:define>

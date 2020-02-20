@@ -6,9 +6,8 @@
 package cps.extended.concept.beans;
 
 import cps.extended.concept.dao.DbManager;
-import cps.extended.concept.entities.asset.Cpe;
-import cps.extended.concept.entities.asset.CyberPhysicalCpe;
-import cps.extended.concept.entities.vulnerability.Cve;
+import cps.extended.concept.entities.Cpe;
+import cps.extended.concept.entities.Cve;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -99,11 +98,6 @@ public class CveController implements Serializable {
                 // get CP-CPEs
                 String sql3 = "SELECT cp_cpe.* FROM cve cve JOIN cve_cp_cpe ccc ON ccc.cyber_cve_id = cve.id JOIN cyber_physical_cpe cp_cpe ON cp_cpe.id = ccc.cyber_physical_cpe_id WHERE cve.id = " + id;
 
-                Query cpCpeQuery = em.createNativeQuery(sql3, CyberPhysicalCpe.class);
-                List<CyberPhysicalCpe> cyberPhysicalCpes = (List<CyberPhysicalCpe>) cpCpeQuery.getResultList();
-                cve.setCyberPhysicalCpes(cyberPhysicalCpes);
-
-                cve.setCyberPhysicalCpes(cyberPhysicalCpes);
             }
 
             this.cves = cves;

@@ -7,28 +7,28 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{cpscpe.ListCommunicationTitle}"></h:outputText>
+            <h:outputText value="#{stringscommunication.ListCommunicationTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{cpscpe.ListCommunicationEmpty}" rendered="#{communicationController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{stringscommunication.ListCommunicationEmpty}" rendered="#{communicationController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{communicationController.items.rowCount > 0}">
                     <h:outputText value="#{communicationController.pagination.pageFirstItem + 1}..#{communicationController.pagination.pageLastItem + 1}/#{communicationController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{communicationController.previous}" value="#{cpscpe.Previous} #{communicationController.pagination.pageSize}" rendered="#{communicationController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{communicationController.next}" value="#{cpscpe.Next} #{communicationController.pagination.pageSize}" rendered="#{communicationController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink action="#{communicationController.previous}" value="#{stringscommunication.Previous} #{communicationController.pagination.pageSize}" rendered="#{communicationController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{communicationController.next}" value="#{stringscommunication.Next} #{communicationController.pagination.pageSize}" rendered="#{communicationController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{communicationController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{cpscpe.ListCommunicationTitle_id}"/>
+                                <h:outputText value="#{stringscommunication.ListCommunicationTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{cpscpe.ListCommunicationTitle_communication}"/>
+                                <h:outputText value="#{stringscommunication.ListCommunicationTitle_communication}"/>
                             </f:facet>
                             <h:outputText value="#{item.communication}"/>
                         </h:column>
@@ -36,19 +36,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{communicationController.prepareView}" value="#{cpscpe.ListCommunicationViewLink}"/>
+                            <h:commandLink action="#{communicationController.prepareView}" value="#{stringscommunication.ListCommunicationViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{communicationController.prepareEdit}" value="#{cpscpe.ListCommunicationEditLink}"/>
+                            <h:commandLink action="#{communicationController.prepareEdit}" value="#{stringscommunication.ListCommunicationEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{communicationController.destroy}" value="#{cpscpe.ListCommunicationDestroyLink}"/>
+                            <h:commandLink action="#{communicationController.destroy}" value="#{stringscommunication.ListCommunicationDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{communicationController.prepareCreate}" value="#{cpscpe.ListCommunicationCreateLink}"/>
+                <h:commandLink action="#{communicationController.prepareCreate}" value="#{stringscommunication.ListCommunicationCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{cpscpe.ListCommunicationIndexLink}"/>
+                <h:link outcome="/index" value="#{stringscommunication.ListCommunicationIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -7,7 +7,7 @@ package cps.extended.concept.dao.asset;
 
 import cps.extended.concept.dao.generic.GenericDAO;
 import java.io.Serializable;
-import cps.extended.concept.entities.asset.Cpe;
+import cps.extended.concept.entities.Cpe;
 import javax.ejb.Stateless;
 
 /**

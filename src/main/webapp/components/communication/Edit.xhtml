@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{stringscommunication.EditCommunicationTitle}"></h:outputText>
+            <h:outputText value="#{attributes.EditCommunicationTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,18 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{stringscommunication.EditCommunicationLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{communicationController.selected.id}" title="#{stringscommunication.EditCommunicationTitle_id}" />
-                    <h:outputLabel value="#{stringscommunication.EditCommunicationLabel_communication}" for="communication" />
-                    <h:inputText id="communication" value="#{communicationController.selected.communication}" title="#{stringscommunication.EditCommunicationTitle_communication}" />
+                    <h:outputLabel value="#{attributes.EditCommunicationLabel_communication}" for="communication" />
+                    <h:inputText id="communication" value="#{communicationController.selected.communication}" title="#{attributes.EditCommunicationTitle_communication}" />
                 </h:panelGrid>
-                <h:commandLink action="#{communicationController.update}" value="#{stringscommunication.EditCommunicationSaveLink}"/>
+                <h:commandLink action="#{communicationController.update}" value="#{attributes.EditCommunicationSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{stringscommunication.EditCommunicationViewLink}"/>
+                <h:link outcome="View" value="#{attributes.EditCommunicationViewLink}"/>
                 <br />
-                <h:commandLink action="#{communicationController.prepareList}" value="#{stringscommunication.EditCommunicationShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{communicationController.prepareList}" value="#{attributes.EditCommunicationShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{stringscommunication.EditCommunicationIndexLink}" />
+                <h:link outcome="/index" value="#{attributes.EditCommunicationIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

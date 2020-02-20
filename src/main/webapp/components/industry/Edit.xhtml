@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{industrystrings.EditIndustryTitle}"></h:outputText>
+            <h:outputText value="#{attributes.EditIndustryTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,18 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{industrystrings.EditIndustryLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{industryController.selected.id}" title="#{industrystrings.EditIndustryTitle_id}" />
-                    <h:outputLabel value="#{industrystrings.EditIndustryLabel_industry}" for="industry" />
-                    <h:inputText id="industry" value="#{industryController.selected.industry}" title="#{industrystrings.EditIndustryTitle_industry}" />
+                    <h:outputLabel value="#{attributes.EditIndustryLabel_industry}" for="industry" />
+                    <h:inputText id="industry" value="#{industryController.selected.industry}" title="#{attributes.EditIndustryTitle_industry}" />
                 </h:panelGrid>
-                <h:commandLink action="#{industryController.update}" value="#{industrystrings.EditIndustrySaveLink}"/>
+                <h:commandLink action="#{industryController.update}" value="#{attributes.EditIndustrySaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{industrystrings.EditIndustryViewLink}"/>
+                <h:link outcome="View" value="#{attributes.EditIndustryViewLink}"/>
                 <br />
-                <h:commandLink action="#{industryController.prepareList}" value="#{industrystrings.EditIndustryShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{industryController.prepareList}" value="#{attributes.EditIndustryShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{industrystrings.EditIndustryIndexLink}" />
+                <h:link outcome="/index" value="#{attributes.EditIndustryIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{industrystrings.ViewIndustryTitle}"></h:outputText>
+            <h:outputText value="#{attributes.ViewIndustryTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,23 +15,21 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{industrystrings.ViewIndustryLabel_id}"/>
-                    <h:outputText value="#{industryController.selected.id}" title="#{industrystrings.ViewIndustryTitle_id}"/>
-                    <h:outputText value="#{industrystrings.ViewIndustryLabel_industry}"/>
-                    <h:outputText value="#{industryController.selected.industry}" title="#{industrystrings.ViewIndustryTitle_industry}"/>
+                    <h:outputText value="#{attributes.ViewIndustryLabel_industry}"/>
+                    <h:outputText value="#{industryController.selected.industry}" title="#{attributes.ViewIndustryTitle_industry}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{industryController.destroyAndView}" value="#{industrystrings.ViewIndustryDestroyLink}"/>
+                <h:commandLink action="#{industryController.destroyAndView}" value="#{attributes.ViewIndustryDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{industrystrings.ViewIndustryEditLink}"/>
+                <h:link outcome="Edit" value="#{attributes.ViewIndustryEditLink}"/>
                 <br />
-                <h:commandLink action="#{industryController.prepareCreate}" value="#{industrystrings.ViewIndustryCreateLink}" />
+                <h:commandLink action="#{industryController.prepareCreate}" value="#{attributes.ViewIndustryCreateLink}" />
                 <br />
-                <h:commandLink action="#{industryController.prepareList}" value="#{industrystrings.ViewIndustryShowAllLink}"/>
+                <h:commandLink action="#{industryController.prepareList}" value="#{attributes.ViewIndustryShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{industrystrings.ViewIndustryIndexLink}"/>
+                <h:link outcome="/index" value="#{attributes.ViewIndustryIndexLink}"/>
 
             </h:form>
         </ui:define>

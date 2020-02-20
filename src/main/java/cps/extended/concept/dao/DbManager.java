@@ -5,13 +5,6 @@
  */
 package cps.extended.concept.dao;
 
-import cps.extended.concept.dao.asset.CpeDAO;
-import cps.extended.concept.dao.asset.attributes.CommunicationDAO;
-import cps.extended.concept.dao.asset.attributes.IndustryDAO;
-import cps.extended.concept.dao.asset.attributes.PartDAO;
-import cps.extended.concept.dao.asset.attributes.CapabilityDAO;
-import cps.extended.concept.dao.asset.attributes.ProtocolDAO;
-import cps.extended.concept.dao.vulnerability.CveDAO;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -24,9 +17,18 @@ import javax.inject.Inject;
 @Stateless
 public class DbManager implements Serializable {
 
+    @Inject
+    EditionDAO editionDAO;
+
+    @Inject
+    OtherDAO otherDAO;
+
+    @Inject
+    ProgrammingLangDAO programmingLangDAO;
+
     /* CPEs */
     @Inject
-    CpeDAO cyberCpeDAO;
+    CpeDAO cppeDAO;
 
     /* CVEs */
     @Inject
@@ -47,14 +49,6 @@ public class DbManager implements Serializable {
 
     @Inject
     ProtocolDAO protocolDAO;
-
-    public CpeDAO getCyberCpeDAO() {
-        return cyberCpeDAO;
-    }
-
-    public void setCyberCpeDAO(CpeDAO cyberCpeDAO) {
-        this.cyberCpeDAO = cyberCpeDAO;
-    }
 
     public CveDAO getCveDAO() {
         return cveDAO;
@@ -102,6 +96,38 @@ public class DbManager implements Serializable {
 
     public void setProtocolDAO(ProtocolDAO protocolDAO) {
         this.protocolDAO = protocolDAO;
+    }
+
+    public ProgrammingLangDAO getProgrammingLangDAO() {
+        return programmingLangDAO;
+    }
+
+    public void setProgrammingLangDAO(ProgrammingLangDAO programmingLangDAO) {
+        this.programmingLangDAO = programmingLangDAO;
+    }
+
+    public CpeDAO getCppeDAO() {
+        return cppeDAO;
+    }
+
+    public void setCppeDAO(CpeDAO cppeDAO) {
+        this.cppeDAO = cppeDAO;
+    }
+
+    public EditionDAO getEditionDAO() {
+        return editionDAO;
+    }
+
+    public void setEditionDAO(EditionDAO editionDAO) {
+        this.editionDAO = editionDAO;
+    }
+
+    public OtherDAO getOtherDAO() {
+        return otherDAO;
+    }
+
+    public void setOtherDAO(OtherDAO otherDAO) {
+        this.otherDAO = otherDAO;
     }
 
 }

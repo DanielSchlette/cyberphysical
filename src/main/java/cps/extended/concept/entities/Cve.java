@@ -1,5 +1,6 @@
 package cps.extended.concept.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -21,7 +22,7 @@ import javax.persistence.ManyToMany;
  * @author tarnschaf
  */
 @Entity(name = "cve")
-public class Cve {
+public class Cve implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id

@@ -7,28 +7,22 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{protocolstrings.ListProtocolTitle}"></h:outputText>
+            <h:outputText value="#{attributes.ListProtocolTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
-                <h:outputText escape="false" value="#{protocolstrings.ListProtocolEmpty}" rendered="#{protocolController.items.rowCount == 0}"/>
+                <h:outputText escape="false" value="#{attributes.ListProtocolEmpty}" rendered="#{protocolController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{protocolController.items.rowCount > 0}">
                     <h:outputText value="#{protocolController.pagination.pageFirstItem + 1}..#{protocolController.pagination.pageLastItem + 1}/#{protocolController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{protocolController.previous}" value="#{protocolstrings.Previous} #{protocolController.pagination.pageSize}" rendered="#{protocolController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{protocolController.next}" value="#{protocolstrings.Next} #{protocolController.pagination.pageSize}" rendered="#{protocolController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandLink action="#{protocolController.previous}" value="#{attributes.Previous} #{protocolController.pagination.pageSize}" rendered="#{protocolController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{protocolController.next}" value="#{attributes.Next} #{protocolController.pagination.pageSize}" rendered="#{protocolController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{protocolController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{protocolstrings.ListProtocolTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{protocolstrings.ListProtocolTitle_protocol}"/>
+                                <h:outputText value="#{attributes.ListProtocolTitle_protocol}"/>
                             </f:facet>
                             <h:outputText value="#{item.protocol}"/>
                         </h:column>
@@ -36,19 +30,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{protocolController.prepareView}" value="#{protocolstrings.ListProtocolViewLink}"/>
+                            <h:commandLink action="#{protocolController.prepareView}" value="#{attributes.ListProtocolViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{protocolController.prepareEdit}" value="#{protocolstrings.ListProtocolEditLink}"/>
+                            <h:commandLink action="#{protocolController.prepareEdit}" value="#{attributes.ListProtocolEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{protocolController.destroy}" value="#{protocolstrings.ListProtocolDestroyLink}"/>
+                            <h:commandLink action="#{protocolController.destroy}" value="#{attributes.ListProtocolDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{protocolController.prepareCreate}" value="#{protocolstrings.ListProtocolCreateLink}"/>
+                <h:commandLink action="#{protocolController.prepareCreate}" value="#{attributes.ListProtocolCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{protocolstrings.ListProtocolIndexLink}"/>
+                <h:link outcome="/index" value="#{attributes.ListProtocolIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

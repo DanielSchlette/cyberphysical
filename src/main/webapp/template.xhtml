@@ -35,6 +35,12 @@
                         <li class="nav-item active">
                             <h:link class="nav-link" outcome="/cvesearch.xhtml">Search CVE</h:link>
                         </li>
+                        <li class="nav-item active">
+                            <h:link class="nav-link" outcome="/datagen.xhtml">Init Database</h:link>
+                        </li>
+                        
+                        
+                        
                         <li class="nav-item active dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Definitions
@@ -46,6 +52,8 @@
                                 <h:link class="dropdown-item" outcome="/components/industry/List.xhtml">Industries</h:link>
                                 <h:link class="dropdown-item" outcome="/components/protocol/List.xhtml">Protocols</h:link>
                                 <h:link class="dropdown-item" outcome="/components/communication/List.xhtml">Communications</h:link>
+                                <h:link class="dropdown-item" outcome="/components/edition/List.xhtml">Edition</h:link>
+                                <h:link class="dropdown-item" outcome="/components/programmingLang/List.xhtml">Programming Language</h:link>
                             </div>
                         </li>
                         <li class="nav-item active dropdown">
@@ -54,9 +62,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
                                 <h:link class="dropdown-item" outcome="/components/cpe/List.xhtml">CPE</h:link>     
-                                <h:link class="dropdown-item" outcome="/components/cyberPhysicalCpe/List.xhtml">CP-CPE</h:link>   
                                 <h:link class="dropdown-item" outcome="/components/cve/List.xhtml">CVE</h:link>   
-                                <h:link class="dropdown-item" outcome="/components/cpsVulnerability/List.xhtml">CPS-CVE</h:link>     
 
                             </div>
                         </li>

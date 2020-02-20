@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{stringspart.EditPartTitle}"></h:outputText>
+            <h:outputText value="#{attributes.EditPartTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,18 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{stringspart.EditPartLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{partController.selected.id}" title="#{stringspart.EditPartTitle_id}" />
-                    <h:outputLabel value="#{stringspart.EditPartLabel_part}" for="part" />
-                    <h:inputText id="part" value="#{partController.selected.part}" title="#{stringspart.EditPartTitle_part}" />
+                    <h:outputLabel value="#{attributes.EditPartLabel_part}" for="part" />
+                    <h:inputText id="part" value="#{partController.selected.part}" title="#{attributes.EditPartTitle_part}" />
                 </h:panelGrid>
-                <h:commandLink action="#{partController.update}" value="#{stringspart.EditPartSaveLink}"/>
+                <h:commandLink action="#{partController.update}" value="#{attributes.EditPartSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{stringspart.EditPartViewLink}"/>
+                <h:link outcome="View" value="#{attributes.EditPartViewLink}"/>
                 <br />
-                <h:commandLink action="#{partController.prepareList}" value="#{stringspart.EditPartShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{partController.prepareList}" value="#{attributes.EditPartShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{stringspart.EditPartIndexLink}" />
+                <h:link outcome="/index" value="#{attributes.EditPartIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

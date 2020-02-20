@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{capabilitystrings.EditCapabilityTitle}"></h:outputText>
+            <h:outputText value="#{attributes.EditCapabilityTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,20 +15,18 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{capabilitystrings.EditCapabilityLabel_capability}" for="capability" />
-                    <h:inputText id="capability" value="#{capabilityController.selected.capability}" title="#{capabilitystrings.EditCapabilityTitle_capability}" />
-                    <h:outputLabel value="#{capabilitystrings.EditCapabilityLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{capabilityController.selected.id}" title="#{capabilitystrings.EditCapabilityTitle_id}" />
+                    <h:outputLabel value="#{attributes.EditCapabilityLabel_capability}" for="capability" />
+                    <h:inputText id="capability" value="#{capabilityController.selected.capability}" title="#{attributes.EditCapabilityTitle_capability}" />
                 </h:panelGrid>
-                <h:commandLink action="#{capabilityController.update}" value="#{capabilitystrings.EditCapabilitySaveLink}"/>
+                <h:commandLink action="#{capabilityController.update}" value="#{attributes.EditCapabilitySaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{capabilitystrings.EditCapabilityViewLink}"/>
+                <h:link outcome="View" value="#{attributes.EditCapabilityViewLink}"/>
                 <br />
-                <h:commandLink action="#{capabilityController.prepareList}" value="#{capabilitystrings.EditCapabilityShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{capabilityController.prepareList}" value="#{attributes.EditCapabilityShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{capabilitystrings.EditCapabilityIndexLink}" />
+                <h:link outcome="/index" value="#{attributes.EditCapabilityIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

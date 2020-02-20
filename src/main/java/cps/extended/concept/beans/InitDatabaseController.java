@@ -6,33 +6,27 @@
 package cps.extended.concept.beans;
 
 import cps.extended.concept.dao.DbManager;
-import cps.extended.concept.entities.asset.attributes.Capability;
-import cps.extended.concept.entities.asset.attributes.Communication;
-import cps.extended.concept.entities.asset.attributes.Industry;
-import cps.extended.concept.entities.asset.attributes.Part;
-import cps.extended.concept.entities.asset.attributes.Protocol;
-import cps.extended.concept.entities.Cve;
+import cps.extended.concept.entities.Capability;
+import cps.extended.concept.entities.Communication;
+import cps.extended.concept.entities.Industry;
+import cps.extended.concept.entities.Part;
+import cps.extended.concept.entities.Protocol;
 import cps.extended.concept.enums.CapabilityPresettings;
 import cps.extended.concept.enums.CommunicationPresettings;
 import cps.extended.concept.enums.IndustryPresettings;
 import cps.extended.concept.enums.PartPresettings;
 import cps.extended.concept.enums.ProtocolPresettings;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import javax.enterprise.context.SessionScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 /**
  * Initializes the default database settings
  *
  * @author tarnschaf
  */
-@SessionScoped
+@ViewScoped
 @Named("initDatabaseController")
 public class InitDatabaseController implements Serializable {
 
@@ -49,7 +43,7 @@ public class InitDatabaseController implements Serializable {
             for (PartPresettings setting : PartPresettings.values()) {
                 Part part = new Part();
                 part.setPart(setting.getPart());
-                dbm.getPartDAO().save(part);
+                dbm.getPartDAO().persist(part);
             }
         }
 
@@ -58,7 +52,7 @@ public class InitDatabaseController implements Serializable {
             for (CommunicationPresettings presettings : CommunicationPresettings.values()) {
                 Communication communication = new Communication();
                 communication.setCommunication(presettings.getCommunication());
-                dbm.getCommunicationDAO().save(communication);
+                dbm.getCommunicationDAO().persist(communication);
             }
         }
 
@@ -67,7 +61,7 @@ public class InitDatabaseController implements Serializable {
             for (CapabilityPresettings capabilityPresettings : CapabilityPresettings.values()) {
                 Capability capability = new Capability();
                 capability.setCapability(capabilityPresettings.getCapability());
-                dbm.getCapabilityDAO().save(capability);
+                dbm.getCapabilityDAO().persist(capability);
             }
         }
 
@@ -76,7 +70,7 @@ public class InitDatabaseController implements Serializable {
             for (ProtocolPresettings protocolPresettings : ProtocolPresettings.values()) {
                 Protocol protocol = new Protocol();
                 protocol.setProtocol(protocolPresettings.getProtocol());
-                dbm.getProtocolDAO().save(protocol);
+                dbm.getProtocolDAO().persist(protocol);
             }
         }
 
@@ -85,7 +79,7 @@ public class InitDatabaseController implements Serializable {
             for (IndustryPresettings industryPresettings : IndustryPresettings.values()) {
                 Industry industry = new Industry();
                 industry.setIndustry(industryPresettings.getIndustry());
-                dbm.getIndustryDAO().save(industry);
+                dbm.getIndustryDAO().persist(industry);
             }
         }
     }

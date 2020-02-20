@@ -43,7 +43,7 @@ public class BundleController implements Serializable {
     public void saveBundle() {
         dbm.getCpsbundleDAO().persist(cpsBundle);
         this.description = "";
-        this.cpsBundle = null;
+        this.cpsBundle = new CPSBundle();
 
     }
 
@@ -52,6 +52,10 @@ public class BundleController implements Serializable {
     }
 
     public void addCPE() {
+        if (cpsBundle.getCpes().contains(cache.getCpeList().get(currentCpe))) {
+            return;
+        }
+
         cpsBundle.getCpes().add(cache.getCpeList().get(currentCpe));
     }
 

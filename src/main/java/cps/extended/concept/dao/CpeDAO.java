@@ -17,7 +17,7 @@ import javax.ejb.Stateless;
  * @author tarnschaf
  */
 @Stateless
-public class CpeDAO extends GenericDAO<Cpe, Integer> implements Serializable {
+public class CpeDAO extends GenericDAO<Cpe, Long> implements Serializable {
 
     public HashMap<String, Cpe> findAllMap() {
         List<Cpe> findAll = findAll();

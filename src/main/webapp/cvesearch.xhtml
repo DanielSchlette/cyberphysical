@@ -10,22 +10,22 @@
             <h:outputText>CVE Search</h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h1 class="mt-5">Common Vulnerabilities and Exposures (CVE) suchen</h1>
+            <h1 class="mt-5">Common Vulnerabilities and Exposures (CVE) search</h1>
             <br></br>
-            <p class="lead">Mit dieser Suchmaschine wird die CVE-Liste nach einem CVE-Eintrag durchsucht, wenn die CVE-ID bekannt ist. 
-                Für die Suche nach Schlüsselwörtern kann entweder ein bestimmter Begriff oder mehrere durch Leerzeichen getrennte Schlüsselwörter eingegeben werden. 
-                Die Ergebnisse werden unten in einer Tabelle präsentiert.</p>
+            <p class="lead">This search engine searches the CVE list for a CVE entry if the CVE ID is known. 
+                You can search for keywords by entering either a specific term or several keywords separated by spaces. 
+                The results are presented in a table below.</p>
             <br></br>
             <h:form>
 
-                <h2>CVE-ID oder Schlüsselwörter:</h2><br></br>
+                <h2>CVE-ID or Keywords</h2><br></br>
                 <h:inputText style="width:100%" value="#{cveSearchController.cveSearchString}"></h:inputText>
                 <br></br>
                 <br></br>
-                <h:commandButton style="width:100%" class="btn btn-light" value="Suche starten" action='#{cveSearchController.searchCves()}'></h:commandButton>
+                <h:commandButton style="width:100%" class="btn btn-light" value="Search" action='#{cveSearchController.searchCves()}'></h:commandButton>
             </h:form>
             <br/>
-            <h:outputLabel class="h4" value="Gefundene Schwachstellen: #{cveSearchController.cves.size()}"></h:outputLabel>
+            <h:outputLabel class="h4" value="Found vulnerabilites: #{cveSearchController.cves.size()}"></h:outputLabel>
             <br/>
             <br/>
             <h:form>
@@ -38,13 +38,13 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Beschreibung"/>
+                            <h:outputText value="Description"/>
                         </f:facet>
                         <h:outputText value="#{cve.description}"/>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Datum"/>
+                            <h:outputText value="Date"/>
                         </f:facet> 
                         <h:outputText value="#{cve.date}"/>
                     </h:column>
@@ -56,7 +56,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Betroffene IT-Produkte"/>
+                            <h:outputText value="Affected Assets"/>
                         </f:facet>
                         <h:dataTable style="width: 100%" value="#{cve.cyberCpes}" var="cpe">
                             <h:column>
@@ -64,16 +64,6 @@
                                 <br/>
                                 <br/>
                                 <h:outputText value="#{cpe.cpe23String}"/>
-                            </h:column>
-                        </h:dataTable>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Betroffene CP-Produkte"/>
-                        </f:facet>
-                        <h:dataTable style="width: 100%" value="#{cve.cyberPhysicalCpes}" var="cpcpe">
-                            <h:column>
-                                <h:outputText value="#{cpcpe.product}">String is empty or null</h:outputText>
                             </h:column>
                         </h:dataTable>
                     </h:column>

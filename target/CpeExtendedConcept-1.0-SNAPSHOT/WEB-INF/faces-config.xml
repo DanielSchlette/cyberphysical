@@ -15,6 +15,10 @@
             <to-view-id>/cvesearch.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>cpedetails</from-outcome>
+            <to-view-id>/cpedetails.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <application>
         <resource-bundle>

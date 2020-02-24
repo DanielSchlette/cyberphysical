@@ -2,7 +2,47 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="index.xhtml" x="654" y="378" zoom="true"/>
+        <Node id="bundlesearch.xhtml" x="896" y="270" zoom="true"/>
+        <Node id="components/protocol/View.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="components/protocol/Edit.xhtml" x="148" y="873" zoom="true"/>
+        <Node id="components/programmingLang/Edit.xhtml" x="1443" y="186" zoom="true"/>
+        <Node id="components/part/View.xhtml" x="612" y="736" zoom="true"/>
+        <Node id="components/protocol/List.xhtml" x="166" y="561" zoom="true"/>
+        <Node id="components/cve/List.xhtml" x="512" y="634" zoom="true"/>
+        <Node id="datagen.xhtml" x="946" y="366" zoom="true"/>
+        <Node id="components/cve/Edit.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="components/cve/View.xhtml" x="1010" y="786" zoom="true"/>
+        <Node id="components/part/List.xhtml" x="647" y="177" zoom="true"/>
+        <Node id="template.xhtml" x="947" y="502" zoom="true"/>
+        <Node id="components/cve/Create.xhtml" x="158" y="734" zoom="true"/>
+        <Node id="components/industry/Create.xhtml" x="133" y="775" zoom="true"/>
+        <Node id="components/communication/Create.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="components/communication/View.xhtml" x="527" y="664" zoom="true"/>
+        <Node id="index.xhtml" x="70" y="223" zoom="true"/>
+        <Node id="CreatePart.xhtml" x="921" y="317" zoom="true"/>
+        <Node id="components/programmingLang/List.xhtml" x="148" y="629" zoom="true"/>
+        <Node id="components/capability/List.xhtml" x="598" y="803" zoom="true"/>
+        <Node id="cpesearch.xhtml" x="40" y="472" zoom="true"/>
+        <Node id="components/part/Edit.xhtml" x="1069" y="819" zoom="true"/>
+        <Node id="components/programmingLang/Create.xhtml" x="591" y="200" zoom="true"/>
+        <Node id="components/communication/List.xhtml" x="1004" y="654" zoom="true"/>
+        <Node id="components/programmingLang/View.xhtml" x="562" y="845" zoom="true"/>
+        <Node id="components/capability/Create.xhtml" x="151" y="659" zoom="true"/>
+        <Node id="components/capability/Edit.xhtml" x="595" y="693" zoom="true"/>
+        <Node id="cvesearch.xhtml" x="5" y="355" zoom="true"/>
+        <Node id="components/industry/List.xhtml" x="193" y="925" zoom="true"/>
+        <Node id="components/capability/View.xhtml" x="485" y="607" zoom="true"/>
+        <Node id="components/protocol/Create.xhtml" x="167" y="844" zoom="true"/>
+        <Node id="components/createCpsBundle.xhtml" x="148" y="713" zoom="true"/>
+        <Node id="components/part/Create.xhtml" x="151" y="813" zoom="true"/>
+        <Node id="components/industry/Edit.xhtml" x="517" y="563" zoom="true"/>
+        <Node id="components/cpe/List.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="cpedetails.xhtml" x="290" y="349" zoom="true"/>
+        <Node id="components/cpe/Create.xhtml" x="1036" y="753" zoom="true"/>
+        <Node id="components/industry/View.xhtml" x="647" y="177" zoom="true"/>
+        <Node id="components/communication/Edit.xhtml" x="595" y="892" zoom="true"/>
+        <Node id="components/cpe/View.xhtml" x="1041" y="717" zoom="true"/>
+        <Node id="components/cpe/Edit.xhtml" x="583" y="714" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

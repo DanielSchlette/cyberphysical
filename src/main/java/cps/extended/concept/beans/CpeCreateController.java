@@ -14,6 +14,7 @@ import cps.extended.concept.entities.Part;
 import cps.extended.concept.entities.ProgrammingLang;
 import cps.extended.concept.entities.Protocol;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -40,12 +41,12 @@ public class CpeCreateController implements Serializable {
     private List<ProgrammingLang> programminglangs;
     private List<Protocol> protocols;
 
-    private String part;
-    private String communication;
-    private String capability;
-    private String industry;
-    private String programmingLang;
-    private String protocol;
+    private String[] part;
+    private String[] communication;
+    private String[] capability;
+    private String[] industry;
+    private String[] programmingLang;
+    private String[] protocol;
 
     Cpe cpe;
 
@@ -62,54 +63,79 @@ public class CpeCreateController implements Serializable {
 
     public void save() {
         if (part != null) {
-            for (Part p : parts) {
-                if (p.getPart().equals(part)) {
-                    cpe.setPart(p);
-                    break;
+            for (Part i : parts) {
+                for (String s : part) {
+                    if (s.equals(i.getPart())) {
+                        if (cpe.getPartlist() == null) {
+                            cpe.setPartlist(new ArrayList<Part>());
+                        }
+                        cpe.getPartlist().add(i);
+                    }
                 }
             }
         }
 
         if (communication != null) {
-            for (Communication c : communications) {
-                if (communication.equals(c.getCommunication())) {
-                    cpe.setCommunication(c);
-                    break;
+            for (Communication i : communications) {
+                for (String s : communication) {
+                    if (s.equals(i.getCommunication())) {
+                        if (cpe.getCommunicationlist() == null) {
+                            cpe.setCommunicationlist(new ArrayList<Communication>());
+                        }
+                        cpe.getCommunicationlist().add(i);
+                    }
                 }
             }
         }
 
         if (capability != null) {
-            for (Capability c : capabilities) {
-                if (c.getCapability().equals(capability)) {
-                    cpe.setCapability(c);
-                    break;
+            for (Capability i : capabilities) {
+                for (String s : capability) {
+                    if (s.equals(i.getCapability())) {
+                        if (cpe.getCapabilitylist() == null) {
+                            cpe.setCapabilitylist(new ArrayList<Capability>());
+                        }
+                        cpe.getCapabilitylist().add(i);
+                    }
                 }
             }
         }
 
         if (industry != null) {
             for (Industry i : industries) {
-                if (i.getIndustry().equals(industry)) {
-                    cpe.setIndustry(i);
-                    break;
+                for (String s : industry) {
+                    if (s.equals(i.getIndustry())) {
+                        if (cpe.getIndustrylist() == null) {
+                            cpe.setIndustrylist(new ArrayList<Industry>());
+                        }
+                        cpe.getIndustrylist().add(i);
+                    }
                 }
             }
         }
 
         if (programmingLang != null) {
-            for (ProgrammingLang l : programminglangs) {
-                if (l.getLanguage().equals(programmingLang)) {
-                    cpe.setProgrammingLang(l);
-                    break;
+            for (ProgrammingLang i : programminglangs) {
+                for (String s : programmingLang) {
+                    if (s.equals(i.getLanguage())) {
+                        if (cpe.getProgrammingLanglist() == null) {
+                            cpe.setProgrammingLanglist(new ArrayList<ProgrammingLang>());
+                        }
+                        cpe.getProgrammingLanglist().add(i);
+                    }
                 }
             }
         }
+
         if (protocol != null) {
-            for (Protocol p : protocols) {
-                if (p.getProtocol().equals(protocol)) {
-                    cpe.setProtocol(p);
-                    break;
+            for (Protocol i : protocols) {
+                for (String s : protocol) {
+                    if (s.equals(i.getProtocol())) {
+                        if (cpe.getProtocollist() == null) {
+                            cpe.setProtocollist(new ArrayList<Protocol>());
+                        }
+                        cpe.getProtocollist().add(i);
+                    }
                 }
             }
         }
@@ -127,14 +153,6 @@ public class CpeCreateController implements Serializable {
 
     public void setCpe(Cpe cpe) {
         this.cpe = cpe;
-    }
-
-    public String getPart() {
-        return part;
-    }
-
-    public void setPart(String part) {
-        this.part = part;
     }
 
     public List<Part> getParts() {
@@ -193,43 +211,51 @@ public class CpeCreateController implements Serializable {
         this.protocols = protocols;
     }
 
-    public String getCommunication() {
+    public String[] getPart() {
+        return part;
+    }
+
+    public void setPart(String[] part) {
+        this.part = part;
+    }
+
+    public String[] getCommunication() {
         return communication;
     }
 
-    public void setCommunication(String communication) {
+    public void setCommunication(String[] communication) {
         this.communication = communication;
     }
 
-    public String getCapability() {
+    public String[] getCapability() {
         return capability;
     }
 
-    public void setCapability(String capability) {
+    public void setCapability(String[] capability) {
         this.capability = capability;
     }
 
-    public String getIndustry() {
+    public String[] getIndustry() {
         return industry;
     }
 
-    public void setIndustry(String industry) {
+    public void setIndustry(String[] industry) {
         this.industry = industry;
     }
 
-    public String getProgrammingLang() {
+    public String[] getProgrammingLang() {
         return programmingLang;
     }
 
-    public void setProgrammingLang(String programmingLang) {
+    public void setProgrammingLang(String[] programmingLang) {
         this.programmingLang = programmingLang;
     }
 
-    public String getProtocol() {
+    public String[] getProtocol() {
         return protocol;
     }
 
-    public void setProtocol(String protocol) {
+    public void setProtocol(String[] protocol) {
         this.protocol = protocol;
     }
 

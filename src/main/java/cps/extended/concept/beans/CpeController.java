@@ -27,33 +27,36 @@ import javax.persistence.Query;
 @SessionScoped
 @Named("cpeSearchController")
 public class CpeController implements Serializable {
-
+    
     private String cpeSearchString;
-
+    
     @Inject
     DbManager dbm;
-
+    
     List<Cpe> cpes;
-
+    
     public CpeController() {
     }
-
+    
     public void searchCpes() {
+        
+        dbm.getCpeDAO().getEntityManager().getEntityManagerFactory().getCache().evict(Cpe.class);
+        
         try {
-
+            
             if (cpeSearchString == null || cpeSearchString.isEmpty()) {
                 return;
             }
-
+            
             cpes = new ArrayList();
 
             // substring
             String[] searchParams = cpeSearchString.split(" ");
-
+            
             EntityManager em = dbm.getCapabilityDAO().getEntityManager();
-
+            
             String sql = "SELECT * FROM cpe WHERE ";
-
+            
             if (!cpeSearchString.startsWith("cpe:2.3:")) {
                 for (String searchParam : searchParams) {
                     if (!searchParam.isEmpty() || !searchParam.equals("") || !searchParam.contains("'")) {
@@ -69,43 +72,43 @@ public class CpeController implements Serializable {
                 }
             }
             sql = sql.substring(0, sql.length() - 4);
-
+            
             Query cpeQuery = em.createNativeQuery(sql, Cpe.class);
             List<Cpe> cpes = (List<Cpe>) cpeQuery.getResultList();
-
+            
             for (Cpe cpe : cpes) {
-
+                
                 Long cpeId = cpe.getId();
 
                 // get CVEs
                 String sql2 = "SELECT cve.* FROM cve cve JOIN cve_cpe vp ON vp.cve_id = cve.id JOIN cpe cpe ON cpe.id = vp.cpe_id WHERE cpe.id = " + cpeId;
-
+                
                 Query cveQuery = em.createNativeQuery(sql2, Cve.class);
                 List<Cve> cves = (List<Cve>) cveQuery.getResultList();
-
+                
                 cpe.setCyberCves(cves);
-
+                
             }
-
+            
             this.cpes = cpes;
-
+            
         } catch (Exception ex) {
             Logger.getLogger(CpeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     public void setCpeSearchString(String cpeSearchString) {
         this.cpeSearchString = cpeSearchString;
     }
-
+    
     public String getCpeSearchString() {
         return cpeSearchString;
     }
-
+    
     public List<Cpe> getCpes() {
         return cpes;
     }
-
+    
     public void setCpes(List<Cpe> cpes) {
         this.cpes = cpes;
     }

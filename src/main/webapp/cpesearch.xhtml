@@ -32,31 +32,28 @@
                 <h:dataTable class="table table-striped table-hover table-bordered dt-responsive nowrap" style="width: 100%" value="#{cpeSearchController.cpes}" var="varcpe" cellpadding="2" cellspacing="0" rules="all">
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Found Item"/>
+                            <h:outputText value="Id"/>
                         </f:facet>
-                        <h:outputText value="#{varcpe.cpe22String}"/>
-                        <br/>
-                        <br/>
-                        <h:outputText value="#{varcpe.cpe23String}"/>
+                        <a href="#{request.contextPath}/cpedetails.xhtml?cpe=#{varcpe.id}">#{varcpe.cpe23String}</a>
+
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Assigned Vulnerabilities"/>
+                            <h:outputText value="Edition"/>
                         </f:facet>
-                        <h:dataTable style="width: 100%" value="#{varcpe.cyberCves}" var="varcve">
-                            <h:column>
-                                <h:outputText value="#{varcve.cveId}"/>
-                                <br/>
-                                <br/>
-                                <h:outputText value="#{varcve.description}"/>
-                                <br/>
-                                <br/>
-                                <h:outputText value="#{varcve.source}"/>
-                                <br/>
-                                <br/>
-                                <h:outputText value="#{varcve.date}"/>
-                            </h:column>
-                        </h:dataTable>
+                        #{varcpe.edition}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Product"/>
+                        </f:facet>
+                        #{varcpe.product}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Vendor"/>
+                        </f:facet>
+                        #{varcpe.vendor}
                     </h:column>
                 </h:dataTable>
             </h:form>

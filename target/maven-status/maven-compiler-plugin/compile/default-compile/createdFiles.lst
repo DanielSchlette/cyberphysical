@@ -15,6 +15,7 @@ cps\extended\concept\components\CveController.class
 cps\extended\concept\entities\Communication.class
 cps\extended\concept\entities\Capability.class
 cps\extended\concept\components\PartController$PartControllerConverter.class
+cps\extended\concept\beans\CPEDetails.class
 cps\extended\concept\components\CapabilityController$CapabilityControllerConverter.class
 cps\extended\concept\entities\Cpe.class
 cps\extended\concept\entities\Communication_.class

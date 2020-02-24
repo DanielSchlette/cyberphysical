@@ -6,12 +6,17 @@
 package cps.extended.concept.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -31,8 +36,12 @@ public class Part implements Serializable {
     @Column(name = "part")
     private String part;
 
-    @OneToMany(mappedBy = "part")
-    private List<Cpe> cpelist;
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "partlist")
+    @JoinTable(name = "cpe_part",
+            joinColumns = @JoinColumn(name = "cpe_id"),
+            inverseJoinColumns = @JoinColumn(name = "part_id")
+    )
+    private List<Cpe> partcpes = new ArrayList<>();
 
     public String getPart() {
         return part;
@@ -50,12 +59,12 @@ public class Part implements Serializable {
         this.id = id;
     }
 
-    public List<Cpe> getCpelist() {
-        return cpelist;
+    public List<Cpe> getPartcpes() {
+        return partcpes;
     }
 
-    public void setCpelist(List<Cpe> cpelist) {
-        this.cpelist = cpelist;
+    public void setPartcpes(List<Cpe> partcpes) {
+        this.partcpes = partcpes;
     }
 
     @Override

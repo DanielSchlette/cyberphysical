@@ -27,7 +27,7 @@ public class CpeCveCache implements Serializable {
     DbManager dbm;
 
     private Map<String, Cpe> cpeList;
-//    private Map<String, Cve> cveList;
+    private Map<String, Cve> cveList;
 
     public void call() {
     }
@@ -35,7 +35,7 @@ public class CpeCveCache implements Serializable {
     @PostConstruct
     public void init() {
         cpeList = dbm.getCpeDAO().findAllMap();
-//        cveList = dbm.getCveDAO().findAllMap();
+        cveList = dbm.getCveDAO().findAllMap();
     }
 
     public Map<String, Cpe> getCpeList() {
@@ -46,11 +46,11 @@ public class CpeCveCache implements Serializable {
         this.cpeList = cpeList;
     }
 
-//    public Map<String, Cve> getCveList() {
-//        return cveList;
-//    }
-//
-//    public void setCveList(Map<String, Cve> cveList) {
-//        this.cveList = cveList;
-//    }
+    public Map<String, Cve> getCveList() {
+        return cveList;
+    }
+
+    public void setCveList(Map<String, Cve> cveList) {
+        this.cveList = cveList;
+    }
 }

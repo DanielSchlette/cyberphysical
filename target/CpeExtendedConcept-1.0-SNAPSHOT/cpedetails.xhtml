@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText>CPE Search</h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h1 class="mt-5">CPE Details</h1>
+            <br></br>
+            <style>
+                label{
+                    font-weight: bold;
+                }
+            </style>
+
+
+            <div class="row">
+
+                <p:panel styleClass="col-md-6">
+
+                    <label>cpe22String: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.cpe22String}"/>
+                    <br/>
+                    <label>cpe23String: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.cpe23String}"/>
+                    <br/>
+                    <label>id: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.id}"/>
+                    <br/>
+                    <label>update: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.update}"/>
+                    <br/>
+                    <label>edition: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.edition}"/>
+                    <br/>
+                    <label>language: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.language}"/>
+                    <br/>
+                    <label>softwareEdition: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.softwareEdition}"/>
+                    <br/>
+                    <label>targetSoftware: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.targetSoftware}"/>
+                    <br/>
+                    <label>title: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.title}"/>
+                    <br/>
+                    <label>vendor: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.vendor}"/>
+                    <br/>
+                    <label>product: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.product}"/>
+                    <br/>
+                    <label>version: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.version}"/>
+                    <br/>
+                    <label>targetHardware: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.targetHardware}"/>
+                    <br/>
+                    <label>other: </label>
+                    <h:outputText value="#{CPEDetails.currentCPE.other}"/>
+                    <br/>
+                    <br/>
+
+                    <a href="#{request.contextPath}/cpedetails.xhtml?cpe=#{CPEDetails.currentCPE.id}&amp;delete=true">Delete CPE</a>
+
+                </p:panel>
+                <p:panel styleClass="col-md-6">
+                    <label>Parts: </label>
+                    <table class="table table-bordered">
+                        <tr>
+                            <c:forEach items="#{CPEDetails.currentCPE.partlist}" var="part">
+                                <td>
+                                    #{part.part}
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+                    <label>Capabilities: </label>
+                    <table class="table table-bordered">
+                        <tr>
+                            <c:forEach items="#{CPEDetails.currentCPE.capabilitylist}" var="capability">
+                                <td>
+                                    #{capability.capability}
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+                    <label>Interfaces: </label>
+                    <table class="table table-bordered">
+                        <tr>
+                            <c:forEach items="#{CPEDetails.currentCPE.communicationlist}" var="communication">
+                                <td>
+                                    #{communication.communication}
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+                    <label>Programming Language: </label>
+                    <table class="table table-bordered">
+                        <tr>
+                            <c:forEach items="#{CPEDetails.currentCPE.programmingLanglist}" var="programmingLang">
+                                <td>
+                                    #{programmingLang.language}
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+                    <label>Sector </label>
+                    <table class="table table-bordered">
+                        <tr>
+                            <c:forEach items="#{CPEDetails.currentCPE.industrylist}" var="industry">
+                                <td>
+                                    #{industry.industry}
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </table>
+
+
+
+                </p:panel>
+
+            </div>
+            <h2 class="mt-5">Referenced CVEs</h2>
+            <br/>
+            <br/>
+            <h:form>
+                <label>Add CVE (Pattern: CVE-YYYY-Number)</label>
+                <p:autoComplete minQueryLength="8" value="#{CPEDetails.currentCve}" completeMethod="#{CPEDetails.querycve}"/>
+                <h:commandButton class="btn btn-primary" value="add" action="#{CPEDetails.addCVE()}"></h:commandButton>
+            </h:form>
+
+
+            <h:panelGroup rendered="#{CPEDetails.currentCPE.cyberCves.size() eq 0}">
+                No entries found
+            </h:panelGroup>
+            <br/>
+            <br/>
+            <div class="row">
+                <h:dataTable class="table table-responsive" style="width: 100%" value="#{CPEDetails.currentCPE.cyberCves}" var="varcve">
+                    <h:column>
+                        <h:outputText value="#{varcve.cveId}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{varcve.description}"/>
+                    </h:column>
+                </h:dataTable>
+
+            </div>
+
+
+        </ui:define>
+    </ui:composition>
+
+</html>

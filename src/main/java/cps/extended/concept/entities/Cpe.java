@@ -66,35 +66,47 @@ public class Cpe implements Serializable {
     @Column(name = "other")
     protected String other;
 
-    @ManyToOne
-    @JoinColumn(name = "part", referencedColumnName = "id")
-    private Part part;
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    private List<Part> partlist;
 
-    @ManyToOne
-    @JoinColumn(name = "capability", referencedColumnName = "id")
-    private Capability capability;
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    private List<Capability> capabilitylist;
 
-    @ManyToOne
-    @JoinColumn(name = "communication", referencedColumnName = "id")
-    private Communication communication;
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    private List<Communication> communicationlist;
 
-    @ManyToOne
-    @JoinColumn(name = "industry", referencedColumnName = "id")
-    private Industry industry;
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    private List<ProgrammingLang> programmingLanglist;
 
-    @ManyToOne
-    @JoinColumn(name = "programmingLang", referencedColumnName = "id")
-    private ProgrammingLang programmingLang;
-
-    @ManyToOne
-    @JoinColumn(name = "protocol", referencedColumnName = "id")
-    private Protocol protocol;
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    private List<Protocol> protocollist;
 
     @Column(name = "cpe22")
     private String cpe22String;
 
     @Column(name = "cpe23")
     private String cpe23String;
+
+    @ManyToMany(cascade = {
+        CascadeType.PERSIST,
+        CascadeType.MERGE
+    })
+    private List<Industry> industrylist;
 
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "cyberCpes")
     private List<Cve> cyberCves = new ArrayList<>();
@@ -121,7 +133,7 @@ public class Cpe implements Serializable {
         for (String token : tokens) {
             switch (tokenNumber) {
                 case 0:
-                    part = parts.get(token);
+                    // part = parts.get(token);
                     break;
                 case 1:
                     vendor = token;
@@ -315,14 +327,6 @@ public class Cpe implements Serializable {
         this.other = other;
     }
 
-    public Part getPart() {
-        return part;
-    }
-
-    public void setPart(Part part) {
-        this.part = part;
-    }
-
     public List<CPSBundle> getBundles() {
         return bundles;
     }
@@ -331,44 +335,52 @@ public class Cpe implements Serializable {
         this.bundles = bundles;
     }
 
-    public Capability getCapability() {
-        return capability;
+    public List<Part> getPartlist() {
+        return partlist;
     }
 
-    public void setCapability(Capability capability) {
-        this.capability = capability;
+    public void setPartlist(List<Part> partlist) {
+        this.partlist = partlist;
     }
 
-    public Communication getCommunication() {
-        return communication;
+    public List<Capability> getCapabilitylist() {
+        return capabilitylist;
     }
 
-    public void setCommunication(Communication communication) {
-        this.communication = communication;
+    public void setCapabilitylist(List<Capability> capabilitylist) {
+        this.capabilitylist = capabilitylist;
     }
 
-    public Industry getIndustry() {
-        return industry;
+    public List<Communication> getCommunicationlist() {
+        return communicationlist;
     }
 
-    public void setIndustry(Industry industry) {
-        this.industry = industry;
+    public void setCommunicationlist(List<Communication> communicationlist) {
+        this.communicationlist = communicationlist;
     }
 
-    public ProgrammingLang getProgrammingLang() {
-        return programmingLang;
+    public List<ProgrammingLang> getProgrammingLanglist() {
+        return programmingLanglist;
     }
 
-    public void setProgrammingLang(ProgrammingLang programmingLang) {
-        this.programmingLang = programmingLang;
+    public void setProgrammingLanglist(List<ProgrammingLang> programmingLanglist) {
+        this.programmingLanglist = programmingLanglist;
     }
 
-    public Protocol getProtocol() {
-        return protocol;
+    public List<Protocol> getProtocollist() {
+        return protocollist;
     }
 
-    public void setProtocol(Protocol protocol) {
-        this.protocol = protocol;
+    public void setProtocollist(List<Protocol> protocollist) {
+        this.protocollist = protocollist;
+    }
+
+    public List<Industry> getIndustrylist() {
+        return industrylist;
+    }
+
+    public void setIndustrylist(List<Industry> industrylist) {
+        this.industrylist = industrylist;
     }
 
 }

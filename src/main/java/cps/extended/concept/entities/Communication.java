@@ -6,12 +6,17 @@
 package cps.extended.concept.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -30,8 +35,12 @@ public class Communication implements Serializable {
     @Column(name = "communication")
     private String communication;
 
-    @OneToMany(mappedBy = "communication")
-    private List<Cpe> cpelist;
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "communicationlist")
+    @JoinTable(name = "cpe_communication",
+            joinColumns = @JoinColumn(name = "cpe_id"),
+            inverseJoinColumns = @JoinColumn(name = "communication_id")
+    )
+    private List<Cpe> communicationcpes = new ArrayList<>();
 
     public Communication() {
     }
@@ -52,12 +61,12 @@ public class Communication implements Serializable {
         this.id = id;
     }
 
-    public List<Cpe> getCpelist() {
-        return cpelist;
+    public List<Cpe> getCommunicationcpes() {
+        return communicationcpes;
     }
 
-    public void setCpelist(List<Cpe> cpelist) {
-        this.cpelist = cpelist;
+    public void setCommunicationcpes(List<Cpe> communicationcpes) {
+        this.communicationcpes = communicationcpes;
     }
 
     @Override

@@ -13,7 +13,29 @@
         </ui:define>
         <ui:define name="body">
 
-            <h1>Create new CVE</h1>
+            <style>
+                .grid td {
+                    display: block;
+                    float: left;
+                    white-space: nowrap;
+                    width: 30%;
+                    box-sizing: border-box;
+                }
+                .grid td:nth-child(5n+6) {
+                    clear: left;
+                }
+                
+                .grid input{
+                    margin-right: 5px;
+                }
+                .grid label{
+                    margin-right: 40px;
+                }
+
+            </style>
+
+
+            <h1>Create new CPE</h1>
 
             <h:form>
                 <h:panelGrid columns="2">
@@ -46,35 +68,29 @@
 
 
                     <h:outputLabel value="#{cpestrings.CreateCpeLabel_part}"/>
-                    <h:selectOneMenu  value="#{cpeCreateController.part}">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    <h:selectManyCheckbox styleClass="grid" value="#{cpeCreateController.part}">
                         <f:selectItems value="#{cpeCreateController.parts}" var="part" itemValue="#{part.part}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value=" Interface"/>
-                    <h:selectOneMenu  value="#{cpeCreateController.communication}">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    </h:selectManyCheckbox>
+                    <h:outputLabel value="Interface"/>
+                    <h:selectManyCheckbox styleClass="grid" value="#{cpeCreateController.communication}">
                         <f:selectItems value="#{cpeCreateController.communications}" var="communication" itemValue="#{communication.communication}"/>
-                    </h:selectOneMenu>
+                    </h:selectManyCheckbox>
                     <h:outputLabel value="Capability"/>
-                    <h:selectOneMenu  value="#{cpeCreateController.capability}">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    <h:selectManyCheckbox styleClass="grid" value="#{cpeCreateController.capability}">
                         <f:selectItems value="#{cpeCreateController.capabilities}" var="capability" itemValue="#{capability.capability}"/>
-                    </h:selectOneMenu>
+                    </h:selectManyCheckbox>
                     <h:outputLabel value="Sector"/>
-                    <h:selectOneMenu  value="#{cpeCreateController.industry}">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    <h:selectManyCheckbox styleClass="grid"  value="#{cpeCreateController.industry}">
                         <f:selectItems value="#{cpeCreateController.industries}" var="industry" itemValue="#{industry.industry}"/>
-                    </h:selectOneMenu>
+                    </h:selectManyCheckbox>
                     <h:outputLabel value="Programming Language"/>
-                    <h:selectOneMenu  value="#{cpeCreateController.programmingLang}">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    <h:selectManyCheckbox styleClass="grid"  value="#{cpeCreateController.programmingLang}">
                         <f:selectItems value="#{cpeCreateController.programminglangs}" var="programmingLang" itemValue="#{programmingLang.language}"/>
-                    </h:selectOneMenu>
+                    </h:selectManyCheckbox>
                     <h:outputLabel value="Protocol"/>
-                    <h:selectOneMenu  value="#{cpeCreateController.protocol}">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    <h:selectManyCheckbox styleClass="grid" value="#{cpeCreateController.protocol}">
                         <f:selectItems value="#{cpeCreateController.protocols}" var="protocol" itemValue="#{protocol.protocol}"/>
-                    </h:selectOneMenu>
+                    </h:selectManyCheckbox>
 
 
 

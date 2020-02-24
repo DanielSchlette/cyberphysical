@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.ViewCveTitle}"></h:outputText>
+            <h:outputText value="#{cvebundle.ViewCveTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,31 +15,30 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewCveLabel_source}"/>
-                    <h:outputText value="#{cveController.selected.source}" title="#{bundle.ViewCveTitle_source}"/>
-                    <h:outputText value="#{bundle.ViewCveLabel_id}"/>
-                    <h:outputText value="#{cveController.selected.id}" title="#{bundle.ViewCveTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewCveLabel_cveId}"/>
-                    <h:outputText value="#{cveController.selected.cveId}" title="#{bundle.ViewCveTitle_cveId}"/>
-                    <h:outputText value="#{bundle.ViewCveLabel_description}"/>
-                    <h:outputText value="#{cveController.selected.description}" title="#{bundle.ViewCveTitle_description}"/>
-                    <h:outputText value="#{bundle.ViewCveLabel_date}"/>
-                    <h:outputText value="#{cveController.selected.date}" title="#{bundle.ViewCveTitle_date}"/>
-                    <h:outputText value="#{bundle.ViewCveLabel_urls}"/>
-                    <h:outputText value="#{cveController.selected.urls}" title="#{bundle.ViewCveTitle_urls}"/>
+                    <h:outputText value="#{cvebundle.ViewCveLabel_source}"/>
+                    <h:outputText value="#{cveController.selected.source}" title="#{cvebundle.ViewCveTitle_source}"/>
+                    <h:outputText value="#{cvebundle.ViewCveLabel_id}"/>
+                    <h:outputText value="#{cveController.selected.id}" title="#{cvebundle.ViewCveTitle_id}"/>
+                    <h:outputText value="#{cvebundle.ViewCveLabel_cveId}"/>
+                    <h:outputText value="#{cveController.selected.cveId}" title="#{cvebundle.ViewCveTitle_cveId}"/>
+                    <h:outputText value="#{cvebundle.ViewCveLabel_description}"/>
+                    <h:outputText value="#{cveController.selected.description}" title="#{cvebundle.ViewCveTitle_description}"/>
+                    <h:outputText value="#{cvebundle.ViewCveLabel_date}"/>
+                    <h:outputText value="#{cveController.selected.date}" title="#{cvebundle.ViewCveTitle_date}"/>
+                    <h:outputText value="#{cvebundle.ViewCveLabel_url}"/>
+                    <h:outputText value="#{cveController.selected.url}" title="#{cvebundle.ViewCveTitle_url}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{cveController.destroyAndView}" value="#{bundle.ViewCveDestroyLink}"/>
+                <h:commandLink action="#{cveController.destroyAndView}" value="#{cvebundle.ViewCveDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewCveEditLink}"/>
+                <h:link outcome="Edit" value="#{cvebundle.ViewCveEditLink}"/>
                 <br />
-                <h:commandLink action="#{cveController.prepareCreate}" value="#{bundle.ViewCveCreateLink}" />
+                <h:commandLink action="#{cveController.prepareCreate}" value="#{cvebundle.ViewCveCreateLink}" />
                 <br />
-                <h:commandLink action="#{cveController.prepareList}" value="#{bundle.ViewCveShowAllLink}"/>
+                <h:commandLink action="#{cveController.prepareList}" value="#{cvebundle.ViewCveShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewCveIndexLink}"/>
 
             </h:form>
         </ui:define>

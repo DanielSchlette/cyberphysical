@@ -64,10 +64,17 @@
 
 
             <hr/>
-            <h:form>
+            <p:panel rendered="#{bundleController.lastBundle ne null}">
+                <h3>Saved Bundle: </h3>
+                <label>Description</label><span>#{bundleController.lastBundle.description}</span>
+                <br/>
+                <c:forEach items="#{bundleController.lastBundle.cpes}" var="currcpe" varStatus="vindex">
+                    <label>CPE #{vindex.index+1}: </label><span>#{currcpe.cpe23String}</span>
+                    <br/>
+                </c:forEach>
 
-            </h:form>
 
+            </p:panel>
 
 
         </ui:define>

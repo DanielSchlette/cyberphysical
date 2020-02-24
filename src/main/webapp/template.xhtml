@@ -18,14 +18,14 @@
         <!--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></link>
         <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/color/48/000000/system-task.png"/>
-        
+
         <style>
             label{
                 margin-right: 10px;
             }
         </style>
-        
-        
+
+
     </h:head>
 
     <h:body>
@@ -38,18 +38,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <h:link class="nav-link" outcome="/bundlesearch.xhtml">Search CPS Bundles</h:link>
+                        <li class="nav-item">
+                            <h:link class="nav-link active" outcome="/index.xhtml">Start</h:link>
                         </li>
+
                         <li class="nav-item active">
+                            <h:link class="nav-link" outcome="/bundlesearch.xhtml">Search Cyber-Physical Systems</h:link>
+                        </li>
+
+                        <li class="nav-item active active">
                             <h:link class="nav-link" outcome="/cpesearch.xhtml">Search CPE</h:link>
                         </li>
                         <li class="nav-item active">
                             <h:link class="nav-link" outcome="/cvesearch.xhtml">Search CVE</h:link>
                         </li>
-<!--                        <li class="nav-item active">
-                            <h:link class="nav-link" outcome="/datagen.xhtml">Init Database</h:link>
-                        </li>-->
+
+                        <!--                        <li class="nav-item active">
+                                                    <h:link class="nav-link" outcome="/datagen.xhtml">Init Database</h:link>
+                                                </li>-->
 
 
 
@@ -59,11 +65,11 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
 
-                                <h:link class="dropdown-item" outcome="/components/part/List.xhtml">Parts</h:link>
-                                <h:link class="dropdown-item" outcome="/components/capability/List.xhtml">Capabilities</h:link>
-                                <h:link class="dropdown-item" outcome="/components/industry/List.xhtml">Industries</h:link>
-                                <h:link class="dropdown-item" outcome="/components/protocol/List.xhtml">Protocols</h:link>
-                                <h:link class="dropdown-item" outcome="/components/communication/List.xhtml">Communications</h:link>
+                                <h:link class="dropdown-item" outcome="/components/part/List.xhtml">Part</h:link>
+                                <h:link class="dropdown-item" outcome="/components/capability/List.xhtml">Capability</h:link>
+                                <h:link class="dropdown-item" outcome="/components/industry/List.xhtml">Industry</h:link>
+                                <h:link class="dropdown-item" outcome="/components/protocol/List.xhtml">Protocol</h:link>
+                                <h:link class="dropdown-item" outcome="/components/communication/List.xhtml">Communication</h:link>
                                 <h:link class="dropdown-item" outcome="/components/programmingLang/List.xhtml">Programming Language</h:link>
                             </div>
                         </li>
@@ -97,6 +103,10 @@
         <div class="container">
             <br></br>
             <br></br>
+
+            <h1> <ui:insert name="title">Default Body</ui:insert></h1>
+            <br></br>
+
             <ui:insert name="body">Default Body</ui:insert>
         </div>
 

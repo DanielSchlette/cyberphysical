@@ -33,6 +33,8 @@ public class BundleController implements Serializable {
     @Inject
     CpeCveCache cache;
 
+    private CPSBundle lastBundle;
+
     private CPSBundle cpsBundle;
 
     @PostConstruct
@@ -41,22 +43,27 @@ public class BundleController implements Serializable {
     }
 
     public void saveBundle() {
-        dbm.getCpsbundleDAO().persist(cpsBundle);
+        lastBundle = dbm.getCpsbundleDAO().persist(cpsBundle);
         this.description = "";
         this.cpsBundle = new CPSBundle();
 
     }
 
     public void updateDescription() {
+        lastBundle = null;
         cpsBundle.setDescription(description);
     }
 
     public void addCPE() {
+        lastBundle = null;
+
         if (cpsBundle.getCpes().contains(cache.getCpeList().get(currentCpe))) {
             return;
         }
 
         cpsBundle.getCpes().add(cache.getCpeList().get(currentCpe));
+
+        currentCpe = "";
     }
 
     public List<String> queryCPE(String query) {
@@ -100,6 +107,14 @@ public class BundleController implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public CPSBundle getLastBundle() {
+        return lastBundle;
+    }
+
+    public void setLastBundle(CPSBundle lastBundle) {
+        this.lastBundle = lastBundle;
     }
 
 }

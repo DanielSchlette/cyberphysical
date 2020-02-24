@@ -22,6 +22,7 @@ cps\extended\concept\components\util\PaginationHelper.class
 cps\extended\concept\components\CapabilityController.class
 cps\extended\concept\components\IndustryFacade.class
 cps\extended\concept\components\ProgrammingLangController$ProgrammingLangControllerConverter.class
+cps\extended\concept\beans\CpeCreateController.class
 cps\extended\concept\entities\Protocol_.class
 cps\extended\concept\beans\InitDatabaseController.class
 cps\extended\concept\components\PartFacade.class

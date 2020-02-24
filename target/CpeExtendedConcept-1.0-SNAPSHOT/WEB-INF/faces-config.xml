@@ -22,22 +22,6 @@
             <var>bundle</var>
         </resource-bundle>
         <resource-bundle>
-            <base-name>/capability</base-name>
-            <var>capability</var>
-        </resource-bundle>
-        <resource-bundle>
-            <base-name>/industry</base-name>
-            <var>industry</var>
-        </resource-bundle>
-        <resource-bundle>
-            <base-name>/protocol</base-name>
-            <var>protocol</var>
-        </resource-bundle>
-        <resource-bundle>
-            <base-name>/vulnerability</base-name>
-            <var>vulnerability</var>
-        </resource-bundle>
-        <resource-bundle>
             <base-name>/cpestrings</base-name>
             <var>cpestrings</var>
         </resource-bundle>
@@ -88,6 +72,10 @@
         <resource-bundle>
             <base-name>/cpestrings</base-name>
             <var>cpestrings</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/cvebundle</base-name>
+            <var>cvebundle</var>
         </resource-bundle>
     </application>
 </faces-config>

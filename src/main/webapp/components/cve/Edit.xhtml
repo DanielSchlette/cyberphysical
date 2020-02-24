@@ -7,7 +7,7 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.EditCveTitle}"></h:outputText>
+            <h:outputText value="#{cvebundle.EditCveTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
@@ -15,28 +15,27 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditCveLabel_source}" for="source" />
-                    <h:inputText id="source" value="#{cveController.selected.source}" title="#{bundle.EditCveTitle_source}" />
-                    <h:outputLabel value="#{bundle.EditCveLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{cveController.selected.id}" title="#{bundle.EditCveTitle_id}" />
-                    <h:outputLabel value="#{bundle.EditCveLabel_cveId}" for="cveId" />
-                    <h:inputText id="cveId" value="#{cveController.selected.cveId}" title="#{bundle.EditCveTitle_cveId}" />
-                    <h:outputLabel value="#{bundle.EditCveLabel_description}" for="description" />
-                    <h:inputTextarea rows="4" cols="30" id="description" value="#{cveController.selected.description}" title="#{bundle.EditCveTitle_description}" />
-                    <h:outputLabel value="#{bundle.EditCveLabel_date}" for="date" />
-                    <h:inputTextarea rows="4" cols="30" id="date" value="#{cveController.selected.date}" title="#{bundle.EditCveTitle_date}" />
-                    <h:outputLabel value="#{bundle.EditCveLabel_urls}" for="urls" />
-                    <h:inputTextarea rows="4" cols="30" id="urls" value="#{cveController.selected.urls}" title="#{bundle.EditCveTitle_urls}" />
+                    <h:outputLabel value="#{cvebundle.EditCveLabel_source}" for="source" />
+                    <h:inputText id="source" value="#{cveController.selected.source}" title="#{cvebundle.EditCveTitle_source}" />
+                    <h:outputLabel value="#{cvebundle.EditCveLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{cveController.selected.id}" title="#{cvebundle.EditCveTitle_id}" />
+                    <h:outputLabel value="#{cvebundle.EditCveLabel_cveId}" for="cveId" />
+                    <h:inputText id="cveId" value="#{cveController.selected.cveId}" title="#{cvebundle.EditCveTitle_cveId}" />
+                    <h:outputLabel value="#{cvebundle.EditCveLabel_description}" for="description" />
+                    <h:inputTextarea rows="4" cols="30" id="description" value="#{cveController.selected.description}" title="#{cvebundle.EditCveTitle_description}" />
+                    <h:outputLabel value="#{cvebundle.EditCveLabel_date}" for="date" />
+                    <h:inputTextarea rows="4" cols="30" id="date" value="#{cveController.selected.date}" title="#{cvebundle.EditCveTitle_date}" />
+                    <h:outputLabel value="#{cvebundle.EditCveLabel_url}" for="url" />
+                    <h:inputTextarea rows="4" cols="30" id="url" value="#{cveController.selected.url}" title="#{cvebundle.EditCveTitle_url}" />
                 </h:panelGrid>
-                <h:commandLink action="#{cveController.update}" value="#{bundle.EditCveSaveLink}"/>
+                <h:commandLink action="#{cveController.update}" value="#{cvebundle.EditCveSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditCveViewLink}"/>
+                <h:link outcome="View" value="#{cvebundle.EditCveViewLink}"/>
                 <br />
-                <h:commandLink action="#{cveController.prepareList}" value="#{bundle.EditCveShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{cveController.prepareList}" value="#{cvebundle.EditCveShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditCveIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

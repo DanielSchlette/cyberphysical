@@ -5,13 +5,13 @@
  */
 package cps.extended.concept.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,13 +25,11 @@ import javax.persistence.ManyToOne;
  * @author tarnschaf
  */
 @Entity(name = "cpe")
-public class Cpe {
-
-    private static final long serialVersionUID = 1L;
+public class Cpe implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long id;
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    protected long id;
 
     @Column(name = "system_update")
     protected String update;
@@ -219,11 +217,11 @@ public class Cpe {
         this.cpe23String = cpe23String;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -6,36 +6,33 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:composition template="/template.xhtml">
+        
+
+        
         <ui:define name="title">
-            <h:outputText value="#{bundle.CreateCveTitle}"></h:outputText>
+            <h:outputText value="#{cvebundle.CreateCveTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
+
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateCveLabel_source}" for="source" />
-                    <h:inputText id="source" value="#{cveController.selected.source}" title="#{bundle.CreateCveTitle_source}" />
-                    <h:outputLabel value="#{bundle.CreateCveLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{cveController.selected.id}" title="#{bundle.CreateCveTitle_id}" />
-                    <h:outputLabel value="#{bundle.CreateCveLabel_cveId}" for="cveId" />
-                    <h:inputText id="cveId" value="#{cveController.selected.cveId}" title="#{bundle.CreateCveTitle_cveId}" />
-                    <h:outputLabel value="#{bundle.CreateCveLabel_description}" for="description" />
-                    <h:inputTextarea rows="4" cols="30" id="description" value="#{cveController.selected.description}" title="#{bundle.CreateCveTitle_description}" />
-                    <h:outputLabel value="#{bundle.CreateCveLabel_date}" for="date" />
-                    <h:inputTextarea rows="4" cols="30" id="date" value="#{cveController.selected.date}" title="#{bundle.CreateCveTitle_date}" />
-                    <h:outputLabel value="#{bundle.CreateCveLabel_urls}" for="urls" />
-                    <h:inputTextarea rows="4" cols="30" id="urls" value="#{cveController.selected.urls}" title="#{bundle.CreateCveTitle_urls}" />
+                    <h:outputLabel value="#{cvebundle.CreateCveLabel_cveId}" for="cveId" />
+                    <h:inputText id="cveId" value="#{cveController.selected.cveId}" title="#{cvebundle.CreateCveTitle_cveId}" />
+                    <h:outputLabel value="#{cvebundle.CreateCveLabel_description}" for="description" />
+                    <h:inputTextarea rows="4" cols="30" id="description" value="#{cveController.selected.description}" title="#{cvebundle.CreateCveTitle_description}" />
+                    <h:outputLabel value="References" for="url" />
+                    <h:inputTextarea rows="4" cols="30" id="url" value="#{cveController.selected.url}" title="References" />
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{cveController.create}" value="#{bundle.CreateCveSaveLink}" />
+                <h:commandLink action="#{cveController.create}" value="#{cvebundle.CreateCveSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{cveController.prepareList}" value="#{bundle.CreateCveShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{cveController.prepareList}" value="#{cvebundle.CreateCveShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateCveIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

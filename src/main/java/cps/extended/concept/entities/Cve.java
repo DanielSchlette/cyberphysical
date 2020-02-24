@@ -42,9 +42,8 @@ public class Cve implements Serializable {
     protected String date;
 
     @Lob
-    @Column(name = "urls")
-    @ElementCollection(targetClass = String.class)
-    private List<String> urls;
+    @Column(name = "url")
+    private String url;
 
     @ManyToMany(cascade = {
         CascadeType.PERSIST,
@@ -110,12 +109,12 @@ public class Cve implements Serializable {
         this.date = date;
     }
 
-    public List<String> getUrls() {
-        return urls;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUrls(List<String> urls) {
-        this.urls = urls;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
 }

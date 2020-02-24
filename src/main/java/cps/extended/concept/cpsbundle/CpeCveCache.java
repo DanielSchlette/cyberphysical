@@ -9,11 +9,9 @@ import cps.extended.concept.dao.DbManager;
 import cps.extended.concept.entities.Cpe;
 import cps.extended.concept.entities.Cve;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -21,7 +19,7 @@ import javax.inject.Named;
  *
  * @author tarnschaf
  */
-@SessionScoped
+@ApplicationScoped
 @Named
 public class CpeCveCache implements Serializable {
 

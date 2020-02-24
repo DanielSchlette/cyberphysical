@@ -61,40 +61,56 @@ public class CpeCreateController implements Serializable {
     }
 
     public void save() {
-        for (Part p : parts) {
-            if (p.getPart().equals(part)) {
-                cpe.setPart(p);
-                break;
+        if (part != null) {
+            for (Part p : parts) {
+                if (p.getPart().equals(part)) {
+                    cpe.setPart(p);
+                    break;
+                }
             }
         }
-        for (Communication c : communications) {
-            if (communication.equals(c.getCommunication())) {
-                cpe.setCommunication(c);
-                break;
+
+        if (communication != null) {
+            for (Communication c : communications) {
+                if (communication.equals(c.getCommunication())) {
+                    cpe.setCommunication(c);
+                    break;
+                }
             }
         }
-        for (Capability c : capabilities) {
-            if (c.getCapability().equals(capability)) {
-                cpe.setCapability(c);
-                break;
+
+        if (capability != null) {
+            for (Capability c : capabilities) {
+                if (c.getCapability().equals(capability)) {
+                    cpe.setCapability(c);
+                    break;
+                }
             }
         }
-        for (Industry i : industries) {
-            if (i.getIndustry().equals(industry)) {
-                cpe.setIndustry(i);
-                break;
+
+        if (industry != null) {
+            for (Industry i : industries) {
+                if (i.getIndustry().equals(industry)) {
+                    cpe.setIndustry(i);
+                    break;
+                }
             }
         }
-        for (ProgrammingLang l : programminglangs) {
-            if (l.getLanguage().equals(programmingLang)) {
-                cpe.setProgrammingLang(l);
-                break;
+
+        if (programmingLang != null) {
+            for (ProgrammingLang l : programminglangs) {
+                if (l.getLanguage().equals(programmingLang)) {
+                    cpe.setProgrammingLang(l);
+                    break;
+                }
             }
         }
-        for (Protocol p : protocols) {
-            if (p.getProtocol().equals(protocol)) {
-                cpe.setProtocol(p);
-                break;
+        if (protocol != null) {
+            for (Protocol p : protocols) {
+                if (p.getProtocol().equals(protocol)) {
+                    cpe.setProtocol(p);
+                    break;
+                }
             }
         }
 

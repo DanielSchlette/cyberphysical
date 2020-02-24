@@ -62,8 +62,10 @@ public class CpsBundleSearchController implements Serializable {
 
     private boolean containsString(String term, CPSBundle bundle) {
 
-        if (bundle.getDescription().contains(term)) {
-            return true;
+        if (bundle.getDescription() != null) {
+            if (bundle.getDescription().contains(term)) {
+                return true;
+            }
         }
 
         List<Cpe> cpes = bundle.getCpes();

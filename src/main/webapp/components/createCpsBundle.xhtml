@@ -31,7 +31,7 @@
                     <br/>
                     <h:form>
                         <label>Add CPE</label>
-                        <p:autoComplete minQueryLength="3" value="#{bundleController.currentCpe}" completeMethod="#{bundleController.queryCPE}"/>
+                        <p:autoComplete minQueryLength="3" value="#{bundleController.currentCpe}" completeMethod="#{bundleController.querycpe}"/>
                         <h:commandButton class="btn btn-primary" value="add" action="#{bundleController.addCPE()}"></h:commandButton>
                     </h:form>
 

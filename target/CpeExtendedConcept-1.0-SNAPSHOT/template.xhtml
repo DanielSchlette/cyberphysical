@@ -37,13 +37,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <b class="navbar-nav">
+                        <h:link class="nav-link active" style="float: left; font-weight: normal" outcome="/index.xhtml">Start</h:link>
+                    </b>
+
+
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <h:link class="nav-link active" outcome="/index.xhtml">Start</h:link>
-                        </li>
 
                         <li class="nav-item active">
-                            <h:link class="nav-link" outcome="/bundlesearch.xhtml">Search Cyber-Physical Systems</h:link>
+                            <h:link class="nav-link" outcome="/bundlesearch.xhtml">Search Cyber-Physical Systems (CPS)</h:link>
                         </li>
 
                         <li class="nav-item active active">
@@ -67,9 +69,9 @@
 
                                 <h:link class="dropdown-item" outcome="/components/part/List.xhtml">Part</h:link>
                                 <h:link class="dropdown-item" outcome="/components/capability/List.xhtml">Capability</h:link>
-                                <h:link class="dropdown-item" outcome="/components/industry/List.xhtml">Industry</h:link>
+                                <h:link class="dropdown-item" outcome="/components/industry/List.xhtml">Sector</h:link>
                                 <h:link class="dropdown-item" outcome="/components/protocol/List.xhtml">Protocol</h:link>
-                                <h:link class="dropdown-item" outcome="/components/communication/List.xhtml">Communication</h:link>
+                                <h:link class="dropdown-item" outcome="/components/communication/List.xhtml"> Interface</h:link>
                                 <h:link class="dropdown-item" outcome="/components/programmingLang/List.xhtml">Programming Language</h:link>
                             </div>
                         </li>
@@ -102,9 +104,6 @@
         </nav>
         <div class="container">
             <br></br>
-            <br></br>
-
-            <h1> <ui:insert name="title">Default Body</ui:insert></h1>
             <br></br>
 
             <ui:insert name="body">Default Body</ui:insert>

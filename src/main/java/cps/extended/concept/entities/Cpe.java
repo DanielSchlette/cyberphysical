@@ -18,6 +18,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * CPE datebase entry
@@ -25,6 +26,7 @@ import javax.persistence.ManyToOne;
  * @author tarnschaf
  */
 @Entity(name = "cpe")
+@Table(name = "cpe")
 public class Cpe implements Serializable {
 
     @Id

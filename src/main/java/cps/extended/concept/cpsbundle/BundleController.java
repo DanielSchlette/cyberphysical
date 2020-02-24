@@ -66,8 +66,12 @@ public class BundleController implements Serializable {
         currentCpe = "";
     }
 
-    public List<String> queryCPE(String query) {
+    public List<String> querycpe(String query) {
+
+        System.err.println("Query: " + query);
         Set<String> keySet = cache.getCpeList().keySet();
+
+        System.err.println("Dataset size: " + keySet.size());
 
         List<String> results = new ArrayList<>();
 

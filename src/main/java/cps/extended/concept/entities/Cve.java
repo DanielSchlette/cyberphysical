@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  * This entity representates a simple Cyber Vulnerability from the Common
@@ -22,6 +23,7 @@ import javax.persistence.ManyToMany;
  * @author tarnschaf
  */
 @Entity(name = "cve")
+@Table(name = "cve")
 public class Cve implements Serializable {
 
     private static final long serialVersionUID = 1L;

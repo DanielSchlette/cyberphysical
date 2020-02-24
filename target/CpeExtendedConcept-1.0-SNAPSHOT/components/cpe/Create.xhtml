@@ -12,6 +12,9 @@
             <h:outputText value="#{cpestrings.CreateCpeTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+
+            <h1>Create new CVE</h1>
+
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{cpestrings.CreateCpeLabel_cpe22String}" for="cpe22String" />
@@ -47,7 +50,7 @@
                         <f:selectItem itemLabel="Select One" itemValue="" />
                         <f:selectItems value="#{cpeCreateController.parts}" var="part" itemValue="#{part.part}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="Communication"/>
+                    <h:outputLabel value=" Interface"/>
                     <h:selectOneMenu  value="#{cpeCreateController.communication}">
                         <f:selectItem itemLabel="Select One" itemValue="" />
                         <f:selectItems value="#{cpeCreateController.communications}" var="communication" itemValue="#{communication.communication}"/>
@@ -57,12 +60,12 @@
                         <f:selectItem itemLabel="Select One" itemValue="" />
                         <f:selectItems value="#{cpeCreateController.capabilities}" var="capability" itemValue="#{capability.capability}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="Industry"/>
+                    <h:outputLabel value="Sector"/>
                     <h:selectOneMenu  value="#{cpeCreateController.industry}">
                         <f:selectItem itemLabel="Select One" itemValue="" />
                         <f:selectItems value="#{cpeCreateController.industries}" var="industry" itemValue="#{industry.industry}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="Programming Lang"/>
+                    <h:outputLabel value="Programming Language"/>
                     <h:selectOneMenu  value="#{cpeCreateController.programmingLang}">
                         <f:selectItem itemLabel="Select One" itemValue="" />
                         <f:selectItems value="#{cpeCreateController.programminglangs}" var="programmingLang" itemValue="#{programmingLang.language}"/>

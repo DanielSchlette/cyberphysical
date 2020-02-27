@@ -5,6 +5,7 @@
  */
 package cps.extended.concept.beans;
 
+import cps.extended.concept.cpsbundle.CpeCveCache;
 import cps.extended.concept.dao.DbManager;
 import cps.extended.concept.entities.Capability;
 import cps.extended.concept.entities.Communication;
@@ -49,6 +50,9 @@ public class CpeCreateController implements Serializable {
     private String[] protocol;
 
     Cpe cpe;
+
+    @Inject
+    CpeCveCache cache;
 
     @PostConstruct
     public void init() {
@@ -140,7 +144,9 @@ public class CpeCreateController implements Serializable {
             }
         }
 
-        dbm.getCpeDAO().persist(cpe);
+        Cpe persisted = dbm.getCpeDAO().persist(cpe);
+
+        cache.addToCpe(persisted);
 
         FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "CPE created successfully", "");
         FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);

@@ -38,6 +38,14 @@ public class CpeCveCache implements Serializable {
         cveList = dbm.getCveDAO().findAllMap();
     }
 
+    public void addToCpe(Cpe cpe) {
+        cpeList.put(cpe.getCpe23String(), cpe);
+    }
+
+    public void addToCve(Cve cve) {
+        cveList.put(cve.getCveId(), cve);
+    }
+
     public Map<String, Cpe> getCpeList() {
         return cpeList;
     }

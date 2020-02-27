@@ -55,10 +55,22 @@
                         </f:facet>
                         <h:dataTable style="width: 100%" value="#{cve.cyberCpes}" var="cpe">
                             <h:column>
-                                <h:outputText value="#{cpe.cpe22String}"/>
-                                <br/>
-                                <br/>
-                                <h:outputText value="#{cpe.cpe23String}"/>
+                                <f:facet name="header">
+                                    <h:outputText value="ID"/>
+                                </f:facet>
+                                <a  href="#{request.contextPath}/cpedetails.xhtml?cpe=#{cpe.id}">#{cpe.cpe23String}</a>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Product"/>
+                                </f:facet>
+                                <h:outputText value="#{cpe.product}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Version"/>
+                                </f:facet>
+                                <h:outputText value="#{cpe.version}"/>
                             </h:column>
                         </h:dataTable>
                     </h:column>

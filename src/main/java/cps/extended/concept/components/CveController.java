@@ -3,6 +3,7 @@ package cps.extended.concept.components;
 import cps.extended.concept.entities.Cve;
 import cps.extended.concept.components.util.JsfUtil;
 import cps.extended.concept.components.util.PaginationHelper;
+import cps.extended.concept.cpsbundle.CpeCveCache;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -16,10 +17,14 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
 
 @Named("cveController")
 @SessionScoped
 public class CveController implements Serializable {
+
+    @Inject
+    CpeCveCache cache;
 
     private Cve current;
     private DataModel items = null;
@@ -82,6 +87,9 @@ public class CveController implements Serializable {
         try {
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/cvebundle").getString("CveCreated"));
+
+            cache.addToCve(current);
+
             return prepareCreate();
         } catch (Exception e) {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/cvebundle").getString("PersistenceErrorOccured"));

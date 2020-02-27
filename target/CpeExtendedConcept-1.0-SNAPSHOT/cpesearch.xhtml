@@ -10,6 +10,16 @@
             <h:outputText>CPE Search</h:outputText>
         </ui:define>
         <ui:define name="body">
+
+            <style>
+                .cpelink {
+                    white-space: pre-line;
+                    overflow: hidden;
+                    max-width: 300px;
+                }
+            </style>
+
+
             <h1 class="mt-5">Search Common Platform Enumeration (CPE)</h1>
             <br></br>
             <p class="lead">This search engine can perform a keyword search or a direct search for CPE names. 
@@ -34,26 +44,20 @@
                         <f:facet name="header">
                             <h:outputText value="Id"/>
                         </f:facet>
-                        <a href="#{request.contextPath}/cpedetails.xhtml?cpe=#{varcpe.id}">#{varcpe.cpe23String}</a>
+                        <a  href="#{request.contextPath}/cpedetails.xhtml?cpe=#{varcpe.id}"><div class="cpelink">#{varcpe.cpe23String}</div></a>
 
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Edition"/>
-                        </f:facet>
-                        #{varcpe.edition}
                     </h:column>
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Product"/>
                         </f:facet>
-                        #{varcpe.product}
+                        <div class="cpelink">#{varcpe.product}</div>
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Vendor"/>
+                            <h:outputText value="Version"/>
                         </f:facet>
-                        #{varcpe.vendor}
+                        #{varcpe.version}
                     </h:column>
                 </h:dataTable>
             </h:form>

@@ -6,7 +6,6 @@
 package cps.extended.concept.dao;
 
 import com.uaihebert.uaicriteria.UaiCriteria;
-import cps.extended.concept.entities.Cpe;
 import java.io.Serializable;
 import cps.extended.concept.entities.Cve;
 import java.util.HashMap;
@@ -19,6 +18,13 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class CveDAO extends GenericDAO<Cve, Long> implements Serializable {
+
+    public List<Cve> searchCves(String term) {
+        UaiCriteria<Cve> crit = getCrit();
+        crit.orStringLike("cveId", "%" + term + "%");
+        crit.orStringLike("description", "%" + term + "%");
+        return crit.getResultList();
+    }
 
     public HashMap<String, Cve> findAllMap() {
         List<Cve> findAll = findAll();
